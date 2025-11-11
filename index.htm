@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html data-sandbox-lang="zh" data-doubao-column="1" data-doubao-line="1" lang="zh-CN"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script>window._sandbox_context = {"locale":"zh","sourceCodeType":"html"}</script><script>window.channelId="";window._img_loading = "//lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/image/img_loading.b156c4b8.gif";</script>
+  <title>Sandbox Document</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script>
+    ;(function (w, d, u, b, n, pc, ga, ae, po, s, p, e, t, pp) {pc = 'precollect';ga
+    = 'getAttribute';ae = 'addEventListener';po = 'PerformanceObserver';s = function
+    (m) {p = [].slice.call(arguments);p.push(Date.now(), location.href);(m == pc ?
+    s.p.a : s.q).push(p)};s.q = [];s.p = { a: [] };w[n] = s;e =
+    document.createElement('script');e.src = u + '?bid=' + b + '&globalName=' +
+    n;e.crossOrigin = u.indexOf('sdk-web') > 0 ? 'anonymous' :
+    'use-credentials';d.getElementsByTagName('head')[0].appendChild(e);if (ae in w)
+    {s.pcErr = function (e) {e = e || w.event;t = e.target || e.srcElement;if (t
+    instanceof Element || t instanceof HTMLElement) {if (t[ga]('integrity'))
+    {w[n](pc, 'sri', t[ga]('href') || t[ga]('src'))} else {w[n](pc, 'st', { tagName:
+    t.tagName, url: t[ga]('href') || t[ga]('src') })}} else {w[n](pc, 'err', e.error)}};s.pcRej = function (e) {e = e || w.event;w[n](pc, 'reject',
+    e.reason || (e.detail && e.detail.reason))};w[ae]('error', s.pcErr,
+    true);w[ae]('unhandledrejection', s.pcRej,
+    true);};if('PerformanceLongTaskTiming' in w) {pp = s.pp = { entries: []
+    };pp.observer = new PerformanceObserver(function (l) {pp.entries =
+    pp.entries.concat(l.getEntries())});pp.observer.observe({ entryTypes:
+    ['longtask']
+    })}})(window,document,'https://lf3-short.ibytedapm.com/slardar/fe/sdk-web/browser.cn.js','flow_web','_slardar')
+    window._slardar('init', {
+        bid: 'flow_web',
+        env: 'cn-release-production-samantha',
+        release: '1.0.0.252',
+        pid: 'html_preview_sandbox',
+        plugins: {
+          blankScreen: {
+            screenshot: true,
+            quality: 0.5,
+          },
+        }
+    })
+    window._slardar('start')
+  </script><script src="Sandbox%20Document_files/browser.cn.js" crossorigin="anonymous"></script><script>
+  (function () {
+    function initPerformanceObserver() {
+  function dispatchActionToParent(action) {
+    window.parent.postMessage(
+      {
+        action,
+        channelId: window.channelId
+      },
+      '*'
+    );
+  }
+
+  const observer = new PerformanceObserver((list) => {
+    const entries = list.getEntries();
+    for (const entry of entries) {
+      if (entry.name === 'first-paint') {
+        dispatchActionToParent('Renderer::Performance::FirstPaint');
+      }
+      if (entry.name === 'first-contentful-paint') {
+        dispatchActionToParent('Renderer::Performance::FirstContentfulPaint');
+      }
+    }
+  });
+
+  observer.observe({ type: 'paint', buffered: true });
+}
+    initPerformanceObserver()
+  })()
+  </script><script>
+  (function () {
+    function replaceImages() {
+  function dispatchActionToParent(action, payload) {
+    window.parent.postMessage(
+      {
+        action,
+        payload,
+        channelId: window.channelId
+      },
+      '*'
+    );
+  }
+
+  function replaceImage(img) {
+    if (!img || img.dataset.key || img.dataset.src || img.src === window._img_loading) {
+      return;
+    }
+
+    const originalUrl = img.src;
+    img.src = window._img_loading;
+    img.dataset.src = originalUrl;
+    img.dataset.reviewStatus = '-1';
+
+    dispatchActionToParent('Renderer::Image::Censor', {
+      originalUrl,
+      attributes: { alt: img.attributes.getNamedItem('alt')?.value }
+    });
+  }
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.target === document.head) {
+        return;
+      }
+
+      // 新增节点
+      if (mutation.type === 'childList') {
+        mutation.addedNodes.forEach((node) => {
+          if (node instanceof HTMLImageElement) {
+            replaceImage(node);
+          } else if (node instanceof HTMLElement) {
+            // 递归处理子元素里的 img
+            node.querySelectorAll?.('img').forEach((img) => {
+              replaceImage(img);
+            });
+          }
+        });
+      }
+      // 属性变化
+      if (mutation.type === 'attributes' && mutation.attributeName === 'src') {
+        const target = mutation.target;
+        if (target instanceof HTMLImageElement) {
+          replaceImage(target);
+        }
+      }
+    });
+  });
+
+  const observe = () => {
+    observer.observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['src']
+    });
+  };
+
+  observe();
+
+  window.addEventListener('DOMContentLoaded', () => {
+    // 由 apps/preview/src/pages/renderer/image-replacer.ts 处理
+    observer.disconnect();
+  });
+}
+    replaceImages()
+  })()
+  </script><script defer="defer" src="Sandbox%20Document_files/lib-polyfill.09284630.js" crossorigin="anonymous"></script><script defer="defer" src="Sandbox%20Document_files/lib-react.d2e0d445.js" crossorigin="anonymous"></script><script defer="defer" src="Sandbox%20Document_files/246.ef0bd76a.js" crossorigin="anonymous"></script><script defer="defer" src="Sandbox%20Document_files/165.4d012433.js" crossorigin="anonymous"></script><script defer="defer" src="Sandbox%20Document_files/renderer.4c41e69d.js" crossorigin="anonymous"></script><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/130.6f5a3f1d.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/132.c08ff03e.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/137.7efa4ab6.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/176.7a248481.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/22.8f619212.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/298.e8d610ee.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/319.cdfd4346.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/320.e8ce6c24.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/362.ae1787d5.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/415.137a84cc.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/448.0b211849.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/482.a67d8134.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/551.e940753f.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/60.f8b4b5a3.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/621.962277c1.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/622.d105cffc.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/642.1334bd89.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/779.8b354359.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/789.4e1abcc2.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/799.1aa75304.js" rel="prefetch"><link href="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/html_preview/1.0.0.252/static/js/async/842.e9b6eb0a.js" rel="prefetch"><link href="Sandbox%20Document_files/165.dd2b60e3.css" rel="stylesheet" crossorigin="anonymous"><link href="Sandbox%20Document_files/renderer.d61766de.css" rel="stylesheet" crossorigin="anonymous"><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter, system-ui, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.pointer-events-none{pointer-events:none}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-6{bottom:1.5rem}.bottom-full{bottom:100%}.left-0{left:0px}.left-1\/2{left:50%}.left-3{left:0.75rem}.left-4{left:1rem}.right-0{right:0px}.right-3{right:0.75rem}.right-4{right:1rem}.right-6{right:1.5rem}.top-1\/2{top:50%}.top-3{top:0.75rem}.top-4{top:1rem}.z-50{z-index:50}.m-4{margin:1rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-1{margin-left:0.25rem}.ml-2{margin-left:0.5rem}.ml-4{margin-left:1rem}.mr-2{margin-right:0.5rem}.mr-3{margin-right:0.75rem}.mt-1{margin-top:0.25rem}.mt-10{margin-top:2.5rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-12{height:3rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-3{height:0.75rem}.h-48{height:12rem}.h-60{height:15rem}.h-64{height:16rem}.h-8{height:2rem}.h-\[50vh\]{height:50vh}.h-full{height:100%}.max-h-\[90vh\]{max-height:90vh}.w-10{width:2.5rem}.w-12{width:3rem}.w-16{width:4rem}.w-2{width:0.5rem}.w-3{width:0.75rem}.w-40{width:10rem}.w-8{width:2rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.flex-shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.list-inside{list-style-position:inside}.list-decimal{list-style-type:decimal}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-10{gap:2.5rem}.gap-3{gap:0.75rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-b-lg{border-bottom-right-radius:0.5rem;border-bottom-left-radius:0.5rem}.rounded-t-lg{border-top-left-radius:0.5rem;border-top-right-radius:0.5rem}.border{border-width:1px}.border-2{border-width:2px}.border-t{border-top-width:1px}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-primary{--tw-border-opacity:1;border-color:rgb(76 175 80 / var(--tw-border-opacity, 1))}.bg-accent{--tw-bg-opacity:1;background-color:rgb(205 220 57 / var(--tw-bg-opacity, 1))}.bg-black\/30{background-color:rgb(0 0 0 / 0.3)}.bg-black\/50{background-color:rgb(0 0 0 / 0.5)}.bg-dark{--tw-bg-opacity:1;background-color:rgb(46 125 50 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-300{--tw-bg-opacity:1;background-color:rgb(209 213 219 / var(--tw-bg-opacity, 1))}.bg-light{--tw-bg-opacity:1;background-color:rgb(245 245 245 / var(--tw-bg-opacity, 1))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(76 175 80 / var(--tw-bg-opacity, 1))}.bg-primary\/10{background-color:rgb(76 175 80 / 0.1)}.bg-primary\/5{background-color:rgb(76 175 80 / 0.05)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/30{background-color:rgb(255 255 255 / 0.3)}.bg-white\/50{background-color:rgb(255 255 255 / 0.5)}.bg-white\/80{background-color:rgb(255 255 255 / 0.8)}.bg-white\/90{background-color:rgb(255 255 255 / 0.9)}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.from-primary\/5{--tw-gradient-from:rgb(76 175 80 / 0.05) var(--tw-gradient-from-position);--tw-gradient-to:rgb(76 175 80 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-white{--tw-gradient-from:#fff var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-primary\/5{--tw-gradient-to:rgb(76 175 80 / 0.05) var(--tw-gradient-to-position)}.to-white{--tw-gradient-to:#fff var(--tw-gradient-to-position)}.object-cover{object-fit:cover}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pl-10{padding-left:2.5rem}.pr-4{padding-right:1rem}.pt-16{padding-top:4rem}.pt-6{padding-top:1.5rem}.text-center{text-align:center}.font-sans{font-family:Inter, system-ui, sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.text-accent{--tw-text-opacity:1;color:rgb(205 220 57 / var(--tw-text-opacity, 1))}.text-dark{--tw-text-opacity:1;color:rgb(46 125 50 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(76 175 80 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }.transition-transform {
+                transition-property: transform;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 300ms;
+            }.hover\:scale-110:hover{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-primary:hover{--tw-border-opacity:1;border-color:rgb(76 175 80 / var(--tw-border-opacity, 1))}.hover\:border-primary\/30:hover{border-color:rgb(76 175 80 / 0.3)}.hover\:bg-black\/70:hover{background-color:rgb(0 0 0 / 0.7)}.hover\:bg-dark:hover{--tw-bg-opacity:1;background-color:rgb(46 125 50 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.hover\:bg-primary:hover{--tw-bg-opacity:1;background-color:rgb(76 175 80 / var(--tw-bg-opacity, 1))}.hover\:bg-primary\/20:hover{background-color:rgb(76 175 80 / 0.2)}.hover\:bg-primary\/5:hover{background-color:rgb(76 175 80 / 0.05)}.hover\:bg-white\/50:hover{background-color:rgb(255 255 255 / 0.5)}.hover\:text-dark:hover{--tw-text-opacity:1;color:rgb(46 125 50 / var(--tw-text-opacity, 1))}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(76 175 80 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:border-primary:focus{--tw-border-opacity:1;border-color:rgb(76 175 80 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-primary\/50:focus{--tw-ring-color:rgb(76 175 80 / 0.5)}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 640px){.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 768px){.md\:col-span-12{grid-column:span 12 / span 12}.md\:flex{display:flex}.md\:hidden{display:none}.md\:h-\[70vh\]{height:70vh}.md\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 1280px){.xl\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}
+    </style><script src="Sandbox%20Document_files/common-monitors.1.16.3.js" crossorigin="anonymous"></script><script src="Sandbox%20Document_files/blank-screen.1.16.3.js" crossorigin="anonymous"></script></head>
+  <body data-doubao-column="1" data-doubao-line="98" class="bg-light text-gray-800 font-sans">
+    <div id="root"></div>
+    
+    <meta charset="UTF-8" data-doubao-line="2" data-doubao-column="5">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" data-doubao-line="3" data-doubao-column="5">
+    <title data-doubao-line="4" data-doubao-column="5">校园绿植小管家</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="Sandbox%20Document_files/3.4.17" data-doubao-line="6" data-doubao-column="5"></script>
+    <!-- 引入Font Awesome -->
+    <link href="Sandbox%20Document_files/font-awesome.min.css" rel="stylesheet" data-doubao-line="8" data-doubao-column="5">
+    <!-- 引入Chart.js -->
+    <script src="Sandbox%20Document_files/chart.umd.min.js" data-doubao-line="10" data-doubao-column="5"></script>
+    
+    <!-- 配置Tailwind自定义颜色和字体 -->
+    <script data-doubao-line="13" data-doubao-column="5">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4CAF50',      // 主绿色
+                        secondary: '#8D6E63',    // 木质棕色
+                        accent: '#CDDC39',       // 亮绿色强调
+                        light: '#F5F5F5',        // 浅色背景
+                        dark: '#2E7D32',         // 深绿色
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- 自定义工具类 -->
+    <style type="text/tailwindcss" data-doubao-line="33" data-doubao-column="5">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .bg-wood {
+                background-image: url('https://picsum.photos/id/176/1000/1000');
+                background-size: cover;
+                background-blend-mode: overlay;
+            }
+            .transition-transform {
+                transition-property: transform;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 300ms;
+            }
+        }
+    </style>
+    
+    <style data-doubao-line="54" data-doubao-column="5">html{scroll-behavior:smooth}.loader{border-top-color:#4CAF50;animation:spinner 0.6s linear infinite}@keyframes spinner{to{transform:rotate(360deg)}}.carousel-item{display:none;animation:fadeIn 0.5s ease-in-out}.carousel-item.active{display:block}@keyframes fadeIn{from{opacity:0}to{opacity:1}}.plant-card:hover{transform:translateY(-5px)}.phenology-chart-container{position:relative;height:300px;width:100%}</style>
+<style>:root {
+      --image-e3b2891c: url(//lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/static/image/html-image-loading.870bba3c.gif);
+  --image-2409f0fe: url(//lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/static/image/html-image-loading.870bba3c.gif);
+  --image-f526c46a: url(//lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/static/image/html-image-loading.870bba3c.gif);
+  --image-2ac4a1d3: url(//lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/static/image/html-image-loading.870bba3c.gif);
+  --image-b376e491: url(//lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/static/image/html-image-loading.870bba3c.gif);
+  --image-cd6e36d8: url(//lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/static/image/html-image-loading.870bba3c.gif);
+  --image-f8c92e50: url(//lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/static/image/html-image-loading.870bba3c.gif);
+  --image-6ea2c2b2: url(//lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/static/image/html-image-loading.870bba3c.gif);
+  --image-3d484b6c: url(//lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/static/image/html-image-loading.870bba3c.gif);
+  --image-1542b3c6: url(//lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/static/image/html-image-loading.870bba3c.gif);
+  --image-76f4b9cd: url(//lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/static/image/html-image-loading.870bba3c.gif);
+  --image-80b5a25a: url(//lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/static/image/html-image-loading.870bba3c.gif);
+  --image-fb58fa53: url(//lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/static/image/html-image-loading.870bba3c.gif);
+    }
+  img[data-key]:not([data-review-status='0']) { object-fit: cover !important; }
+  </style>
+
+    <!-- 顶部导航栏 -->
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 shadow-md" data-doubao-line="100" data-doubao-column="5" data-doubao-key="0">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between" data-doubao-line="101" data-doubao-column="9" data-doubao-key="1">
+            <!-- 网站Logo -->
+            <div class="flex items-center space-x-2" data-doubao-line="103" data-doubao-column="13" data-doubao-key="2">
+                <i class="fa fa-leaf text-primary text-2xl" data-doubao-line="104" data-doubao-column="17" data-doubao-key="3"></i>
+                <h1 class="text-xl md:text-2xl font-bold text-dark" data-doubao-line="105" data-doubao-column="17" data-doubao-key="4">校园绿植小管家</h1>
+            </div>
+            
+            <!-- 桌面导航菜单 -->
+            <nav class="hidden md:flex items-center space-x-8" data-doubao-line="109" data-doubao-column="13" data-doubao-key="5">
+                <a href="#home" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium" data-doubao-line="110" data-doubao-column="17" data-doubao-key="6">首页</a>
+                <a href="#gallery" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium" data-doubao-line="111" data-doubao-column="17" data-doubao-key="7">绿植图鉴</a>
+                <a href="#care" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium" data-doubao-line="112" data-doubao-column="17" data-doubao-key="8">养护知识</a>
+                <a href="#events" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium" data-doubao-line="113" data-doubao-column="17" data-doubao-key="9">校园动态</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium" data-doubao-line="114" data-doubao-column="17" data-doubao-key="10">联系我们</a>
+            </nav>
+            
+            <!-- 搜索框 -->
+            <div class="hidden md:flex items-center relative" data-doubao-line="118" data-doubao-column="13" data-doubao-key="11">
+                <input type="text" placeholder="搜索绿植..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" data-doubao-line="119" data-doubao-column="17" data-doubao-key="12">
+                <i class="fa fa-search absolute left-3 text-gray-400" data-doubao-line="120" data-doubao-column="17" data-doubao-key="13"></i>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none" data-doubao-line="124" data-doubao-column="13" data-doubao-key="14">
+                <i class="fa fa-bars text-xl" data-doubao-line="125" data-doubao-column="17" data-doubao-key="15"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100" data-doubao-line="130" data-doubao-column="9" data-doubao-key="16">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4" data-doubao-line="131" data-doubao-column="13" data-doubao-key="17">
+                <a href="#home" class="text-gray-700 hover:text-primary py-2 transition-colors" data-doubao-line="132" data-doubao-column="17" data-doubao-key="18">首页</a>
+                <a href="#gallery" class="text-gray-700 hover:text-primary py-2 transition-colors" data-doubao-line="133" data-doubao-column="17" data-doubao-key="19">绿植图鉴</a>
+                <a href="#care" class="text-gray-700 hover:text-primary py-2 transition-colors" data-doubao-line="134" data-doubao-column="17" data-doubao-key="20">养护知识</a>
+                <a href="#events" class="text-gray-700 hover:text-primary py-2 transition-colors" data-doubao-line="135" data-doubao-column="17" data-doubao-key="21">校园动态</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary py-2 transition-colors" data-doubao-line="136" data-doubao-column="17" data-doubao-key="22">联系我们</a>
+                
+                <!-- 移动端搜索框 -->
+                <div class="relative" data-doubao-line="139" data-doubao-column="17" data-doubao-key="23">
+                    <input type="text" placeholder="搜索绿植..." class="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" data-doubao-line="140" data-doubao-column="21" data-doubao-key="24">
+                    <i class="fa fa-search absolute left-3 top-3 text-gray-400" data-doubao-line="141" data-doubao-column="21" data-doubao-key="25"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main data-doubao-line="147" data-doubao-column="5" data-doubao-key="26">
+        <!-- 首页/Banner区域 -->
+        <section id="home" class="pt-16" data-doubao-line="149" data-doubao-column="9" data-doubao-key="27">
+            <!-- 轮播图Banner -->
+            <div id="carousel" class="relative h-[50vh] md:h-[70vh] overflow-hidden" data-doubao-line="151" data-doubao-column="13" data-doubao-key="28">
+                <div class="carousel-item h-full w-full" data-doubao-line="152" data-doubao-column="17" data-doubao-key="29">
+                    <img src="Sandbox%20Document_files/106-1920x1080.jpg" alt="校园樱花大道" class="w-full h-full object-cover" data-doubao-line="153" data-doubao-column="21" data-key="e3b2891c" data-review-status="0" data-src="https://picsum.photos/id/106/1920/1080" data-doubao-key="30">
+                    <div class="absolute inset-0 bg-black/30 flex items-center" data-doubao-line="154" data-doubao-column="21" data-doubao-key="31">
+                        <div class="container mx-auto px-6 text-white" data-doubao-line="155" data-doubao-column="25" data-doubao-key="32">
+                            <h2 class="text-3xl md:text-5xl font-bold mb-4 text-shadow" data-doubao-line="156" data-doubao-column="29" data-doubao-key="33">守护校园绿意</h2>
+                            <p class="text-lg md:text-xl max-w-2xl mb-8 text-shadow" data-doubao-line="157" data-doubao-column="29" data-doubao-key="34">探索校园植物世界，学习专业养护知识，共同维护美丽校园环境</p>
+                            <a href="#gallery" class="bg-primary hover:bg-dark text-white px-6 py-3 rounded-full inline-flex items-center transition-all shadow-lg hover:shadow-xl" data-doubao-line="158" data-doubao-column="29" data-doubao-key="35">
+                                浏览绿植图鉴 <i class="fa fa-arrow-right ml-2" data-doubao-line="159" data-doubao-column="40" data-doubao-key="36"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item h-full w-full" data-doubao-line="165" data-doubao-column="17" data-doubao-key="37">
+                    <img src="Sandbox%20Document_files/152-1920x1080.jpg" alt="校园绿化景观" class="w-full h-full object-cover" data-doubao-line="166" data-doubao-column="21" data-key="2409f0fe" data-review-status="0" data-src="https://picsum.photos/id/152/1920/1080" data-doubao-key="38">
+                    <div class="absolute inset-0 bg-black/30 flex items-center" data-doubao-line="167" data-doubao-column="21" data-doubao-key="39">
+                        <div class="container mx-auto px-6 text-white" data-doubao-line="168" data-doubao-column="25" data-doubao-key="40">
+                            <h2 class="text-3xl md:text-5xl font-bold mb-4 text-shadow" data-doubao-line="169" data-doubao-column="29" data-doubao-key="41">学习养护技巧</h2>
+                            <p class="text-lg md:text-xl max-w-2xl mb-8 text-shadow" data-doubao-line="170" data-doubao-column="29" data-doubao-key="42">掌握专业的植物养护知识，让每一株绿植都能健康成长</p>
+                            <a href="#care" class="bg-primary hover:bg-dark text-white px-6 py-3 rounded-full inline-flex items-center transition-all shadow-lg hover:shadow-xl" data-doubao-line="171" data-doubao-column="29" data-doubao-key="43">
+                                查看养护指南 <i class="fa fa-arrow-right ml-2" data-doubao-line="172" data-doubao-column="40" data-doubao-key="44"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item h-full w-full active" data-doubao-line="178" data-doubao-column="17" data-doubao-key="45">
+                    <img src="Sandbox%20Document_files/145-1920x1080.jpg" alt="学生参与绿植养护活动" class="w-full h-full object-cover" data-doubao-line="179" data-doubao-column="21" data-key="f526c46a" data-review-status="0" data-src="https://picsum.photos/id/145/1920/1080" data-doubao-key="46">
+                    <div class="absolute inset-0 bg-black/30 flex items-center" data-doubao-line="180" data-doubao-column="21" data-doubao-key="47">
+                        <div class="container mx-auto px-6 text-white" data-doubao-line="181" data-doubao-column="25" data-doubao-key="48">
+                            <h2 class="text-3xl md:text-5xl font-bold mb-4 text-shadow" data-doubao-line="182" data-doubao-column="29" data-doubao-key="49">参与校园活动</h2>
+                            <p class="text-lg md:text-xl max-w-2xl mb-8 text-shadow" data-doubao-line="183" data-doubao-column="29" data-doubao-key="50">加入我们的绿植保护活动，一起为校园增添更多绿色</p>
+                            <a href="#events" class="bg-primary hover:bg-dark text-white px-6 py-3 rounded-full inline-flex items-center transition-all shadow-lg hover:shadow-xl" data-doubao-line="184" data-doubao-column="29" data-doubao-key="51">
+                                了解最新活动 <i class="fa fa-arrow-right ml-2" data-doubao-line="185" data-doubao-column="40" data-doubao-key="52"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 轮播控制按钮 -->
+                <button id="prev-slide" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-sm transition-all" data-doubao-line="192" data-doubao-column="17" data-doubao-key="53">
+                    <i class="fa fa-chevron-left" data-doubao-line="193" data-doubao-column="21" data-doubao-key="54"></i>
+                </button>
+                <button id="next-slide" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-sm transition-all" data-doubao-line="195" data-doubao-column="17" data-doubao-key="55">
+                    <i class="fa fa-chevron-right" data-doubao-line="196" data-doubao-column="21" data-doubao-key="56"></i>
+                </button>
+                
+                <!-- 轮播指示器 -->
+                <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-2" data-doubao-line="200" data-doubao-column="17" data-doubao-key="57">
+                    <button class="carousel-indicator w-3 h-3 rounded-full bg-white/50 active" data-index="0" data-doubao-line="201" data-doubao-column="21" data-doubao-key="58"></button>
+                    <button class="carousel-indicator w-3 h-3 rounded-full bg-white/50" data-index="1" data-doubao-line="202" data-doubao-column="21" data-doubao-key="59"></button>
+                    <button class="carousel-indicator w-3 h-3 rounded-full bg-white" data-index="2" data-doubao-line="203" data-doubao-column="21" data-doubao-key="60"></button>
+                </div>
+            </div>
+            
+            <!-- 快速导航 -->
+            <div class="py-12 bg-white" data-doubao-line="208" data-doubao-column="13" data-doubao-key="61">
+                <div class="container mx-auto px-4" data-doubao-line="209" data-doubao-column="17" data-doubao-key="62">
+                    <h2 class="text-2xl md:text-3xl font-bold text-center mb-10 text-dark" data-doubao-line="210" data-doubao-column="21" data-doubao-key="63">快速导航</h2>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6" data-doubao-line="212" data-doubao-column="21" data-doubao-key="64">
+                        <a href="#gallery" class="flex flex-col items-center p-6 rounded-xl bg-light hover:bg-primary/5 transition-all shadow-sm hover:shadow-md" data-doubao-line="213" data-doubao-column="25" data-doubao-key="65">
+                            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4" data-doubao-line="214" data-doubao-column="29" data-doubao-key="66">
+                                <i class="fa fa-pagelines text-2xl text-primary" data-doubao-line="215" data-doubao-column="33" data-doubao-key="67"></i>
+                            </div>
+                            <h3 class="text-lg font-medium text-center" data-doubao-line="217" data-doubao-column="29" data-doubao-key="68">绿植图鉴</h3>
+                        </a>
+                        
+                        <a href="#care" class="flex flex-col items-center p-6 rounded-xl bg-light hover:bg-primary/5 transition-all shadow-sm hover:shadow-md" data-doubao-line="220" data-doubao-column="25" data-doubao-key="69">
+                            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4" data-doubao-line="221" data-doubao-column="29" data-doubao-key="70">
+                                <i class="fa fa-tint text-2xl text-primary" data-doubao-line="222" data-doubao-column="33" data-doubao-key="71"></i>
+                            </div>
+                            <h3 class="text-lg font-medium text-center" data-doubao-line="224" data-doubao-column="29" data-doubao-key="72">养护知识</h3>
+                        </a>
+                        
+                        <a href="#phenology" class="flex flex-col items-center p-6 rounded-xl bg-light hover:bg-primary/5 transition-all shadow-sm hover:shadow-md" data-doubao-line="227" data-doubao-column="25" data-doubao-key="73">
+                            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4" data-doubao-line="228" data-doubao-column="29" data-doubao-key="74">
+                                <i class="fa fa-calendar text-2xl text-primary" data-doubao-line="229" data-doubao-column="33" data-doubao-key="75"></i>
+                            </div>
+                            <h3 class="text-lg font-medium text-center" data-doubao-line="231" data-doubao-column="29" data-doubao-key="76">物候观测</h3>
+                        </a>
+                        
+                        <a href="#events" class="flex flex-col items-center p-6 rounded-xl bg-light hover:bg-primary/5 transition-all shadow-sm hover:shadow-md" data-doubao-line="234" data-doubao-column="25" data-doubao-key="77">
+                            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4" data-doubao-line="235" data-doubao-column="29" data-doubao-key="78">
+                                <i class="fa fa-calendar-check-o text-2xl text-primary" data-doubao-line="236" data-doubao-column="33" data-doubao-key="79"></i>
+                            </div>
+                            <h3 class="text-lg font-medium text-center" data-doubao-line="238" data-doubao-column="29" data-doubao-key="80">校园活动</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 校园绿植动态 -->
+            <div class="py-12 bg-gradient-to-b from-white to-primary/5" data-doubao-line="245" data-doubao-column="13" data-doubao-key="81">
+                <div class="container mx-auto px-4" data-doubao-line="246" data-doubao-column="17" data-doubao-key="82">
+                    <div class="flex justify-between items-center mb-10" data-doubao-line="247" data-doubao-column="21" data-doubao-key="83">
+                        <h2 class="text-2xl md:text-3xl font-bold text-dark" data-doubao-line="248" data-doubao-column="25" data-doubao-key="84">校园绿植动态</h2>
+                        <a href="#events" class="text-primary hover:text-dark inline-flex items-center font-medium transition-colors" data-doubao-line="249" data-doubao-column="25" data-doubao-key="85">
+                            查看全部 <i class="fa fa-angle-right ml-1" data-doubao-line="250" data-doubao-column="34" data-doubao-key="86"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-doubao-line="254" data-doubao-column="21" data-doubao-key="87">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all" data-doubao-line="255" data-doubao-column="25" data-doubao-key="88">
+                            <img src="Sandbox%20Document_files/119-600x400.jpg" alt="春季植树活动" class="w-full h-48 object-cover" data-doubao-line="256" data-doubao-column="29" data-key="2ac4a1d3" data-review-status="0" data-src="https://picsum.photos/id/119/600/400" data-doubao-key="89">
+                            <div class="p-6" data-doubao-line="257" data-doubao-column="29" data-doubao-key="90">
+                                <div class="text-sm text-gray-500 mb-2" data-doubao-line="258" data-doubao-column="33" data-doubao-key="91">2023年3月12日</div>
+                                <h3 class="text-xl font-bold mb-3" data-doubao-line="259" data-doubao-column="33" data-doubao-key="92">春季植树活动圆满结束</h3>
+                                <p class="text-gray-600 mb-4" data-doubao-line="260" data-doubao-column="33" data-doubao-key="93">我校开展了一年一度的植树活动，共种植树苗200余棵，为校园增添了新的绿色。</p>
+                                <a href="#" class="text-primary hover:text-dark inline-flex items-center font-medium transition-colors" data-doubao-line="261" data-doubao-column="33" data-doubao-key="94">
+                                    阅读详情 <i class="fa fa-arrow-right ml-1 text-sm" data-doubao-line="262" data-doubao-column="42" data-doubao-key="95"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all" data-doubao-line="267" data-doubao-column="25" data-doubao-key="96">
+                            <img src="Sandbox%20Document_files/106-600x400.jpg" alt="樱花节活动预告" class="w-full h-48 object-cover" data-doubao-line="268" data-doubao-column="29" data-key="b376e491" data-review-status="0" data-src="https://picsum.photos/id/106/600/400" data-doubao-key="97">
+                            <div class="p-6" data-doubao-line="269" data-doubao-column="29" data-doubao-key="98">
+                                <div class="text-sm text-gray-500 mb-2" data-doubao-line="270" data-doubao-column="33" data-doubao-key="99">即将开始 · 4月5日</div>
+                                <h3 class="text-xl font-bold mb-3" data-doubao-line="271" data-doubao-column="33" data-doubao-key="100">校园樱花节活动预告</h3>
+                                <p class="text-gray-600 mb-4" data-doubao-line="272" data-doubao-column="33" data-doubao-key="101">随着樱花即将绽放，我校将举办樱花节活动，包括摄影比赛、樱花知识讲座等。</p>
+                                <a href="#" class="text-primary hover:text-dark inline-flex items-center font-medium transition-colors" data-doubao-line="273" data-doubao-column="33" data-doubao-key="102">
+                                    了解详情 <i class="fa fa-arrow-right ml-1 text-sm" data-doubao-line="274" data-doubao-column="42" data-doubao-key="103"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all" data-doubao-line="279" data-doubao-column="25" data-doubao-key="104">
+                            <img src="Sandbox%20Document_files/184-600x400.jpg" alt="绿植养护培训" class="w-full h-48 object-cover" data-doubao-line="280" data-doubao-column="29" data-key="cd6e36d8" data-review-status="0" data-src="https://picsum.photos/id/184/600/400" data-doubao-key="105">
+                            <div class="p-6" data-doubao-line="281" data-doubao-column="29" data-doubao-key="106">
+                                <div class="text-sm text-gray-500 mb-2" data-doubao-line="282" data-doubao-column="33" data-doubao-key="107">2023年3月5日</div>
+                                <h3 class="text-xl font-bold mb-3" data-doubao-line="283" data-doubao-column="33" data-doubao-key="108">绿植养护培训顺利开展</h3>
+                                <p class="text-gray-600 mb-4" data-doubao-line="284" data-doubao-column="33" data-doubao-key="109">邀请专业园艺师为我校绿植养护志愿者进行培训，传授专业的植物养护知识。</p>
+                                <a href="#" class="text-primary hover:text-dark inline-flex items-center font-medium transition-colors" data-doubao-line="285" data-doubao-column="33" data-doubao-key="110">
+                                    培训内容 <i class="fa fa-arrow-right ml-1 text-sm" data-doubao-line="286" data-doubao-column="42" data-doubao-key="111"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 绿植图鉴模块 -->
+        <section id="gallery" class="py-16 bg-white" data-doubao-line="296" data-doubao-column="9" data-doubao-key="112">
+            <div class="container mx-auto px-4" data-doubao-line="297" data-doubao-column="13" data-doubao-key="113">
+                <div class="text-center mb-12" data-doubao-line="298" data-doubao-column="17" data-doubao-key="114">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark" data-doubao-line="299" data-doubao-column="21" data-doubao-key="115">校园绿植图鉴</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto" data-doubao-line="300" data-doubao-column="21" data-doubao-key="116">探索校园内丰富多样的植物种类，了解它们的特点和生长习性</p>
+                </div>
+                
+                <!-- 分类标签 -->
+                <div class="flex flex-wrap justify-center gap-3 mb-10" data-doubao-line="304" data-doubao-column="17" data-doubao-key="117">
+                    <button class="category-btn bg-primary text-white px-5 py-2 rounded-full text-sm font-medium" data-doubao-line="305" data-doubao-column="21" data-doubao-key="118">全部</button>
+                    <button class="category-btn bg-gray-100 hover:bg-gray-200 px-5 py-2 rounded-full text-sm font-medium transition-colors" data-doubao-line="306" data-doubao-column="21" data-doubao-key="119">树木</button>
+                    <button class="category-btn bg-gray-100 hover:bg-gray-200 px-5 py-2 rounded-full text-sm font-medium transition-colors" data-doubao-line="307" data-doubao-column="21" data-doubao-key="120">花卉</button>
+                    <button class="category-btn bg-gray-100 hover:bg-gray-200 px-5 py-2 rounded-full text-sm font-medium transition-colors" data-doubao-line="308" data-doubao-column="21" data-doubao-key="121">灌木</button>
+                    <button class="category-btn bg-gray-100 hover:bg-gray-200 px-5 py-2 rounded-full text-sm font-medium transition-colors" data-doubao-line="309" data-doubao-column="21" data-doubao-key="122">草本</button>
+                    <button class="category-btn bg-gray-100 hover:bg-gray-200 px-5 py-2 rounded-full text-sm font-medium transition-colors" data-doubao-line="310" data-doubao-column="21" data-doubao-key="123">特色品种</button>
+                </div>
+                
+                <!-- 常见品种展示 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16" data-doubao-line="314" data-doubao-column="17" data-doubao-key="124">
+                    <!-- 植物卡片1 -->
+                    <div class="plant-card bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all" data-doubao-line="316" data-doubao-column="21" data-doubao-key="125">
+                        <div class="relative h-60 overflow-hidden" data-doubao-line="317" data-doubao-column="25" data-doubao-key="126">
+                            <img src="Sandbox%20Document_files/106-600x800.jpg" alt="樱花树" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" data-doubao-line="318" data-doubao-column="29" data-key="f8c92e50" data-review-status="0" data-src="https://picsum.photos/id/106/600/800" data-doubao-key="127">
+                            <span class="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-dark text-xs font-medium px-2 py-1 rounded-full" data-doubao-line="319" data-doubao-column="29" data-doubao-key="128">树木</span>
+                        </div>
+                        <div class="p-5" data-doubao-line="321" data-doubao-column="25" data-doubao-key="129">
+                            <h3 class="text-xl font-bold mb-1" data-doubao-line="322" data-doubao-column="29" data-doubao-key="130">樱花树</h3>
+                            <p class="text-gray-600 text-sm mb-3" data-doubao-line="323" data-doubao-column="29" data-doubao-key="131">蔷薇科樱属</p>
+                            <p class="text-gray-700 text-sm mb-4" data-doubao-line="324" data-doubao-column="29" data-doubao-key="132">花期3-4月，花多为白色、粉红色，花瓣先端有缺刻，花每支三五朵，成伞状花序。</p>
+                            <button class="text-primary hover:text-dark font-medium text-sm inline-flex items-center transition-colors plant-detail-btn" data-id="1" data-doubao-line="325" data-doubao-column="29" data-doubao-key="133">
+                                查看详情 <i class="fa fa-angle-right ml-1" data-doubao-line="326" data-doubao-column="38" data-doubao-key="134"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 植物卡片2 -->
+                    <div class="plant-card bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all" data-doubao-line="332" data-doubao-column="21" data-doubao-key="135">
+                        <div class="relative h-60 overflow-hidden" data-doubao-line="333" data-doubao-column="25" data-doubao-key="136">
+                            <img src="Sandbox%20Document_files/119-600x800.jpg" alt="银杏树" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" data-doubao-line="334" data-doubao-column="29" data-key="6ea2c2b2" data-review-status="0" data-src="https://picsum.photos/id/119/600/800" data-doubao-key="137">
+                            <span class="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-dark text-xs font-medium px-2 py-1 rounded-full" data-doubao-line="335" data-doubao-column="29" data-doubao-key="138">树木</span>
+                        </div>
+                        <div class="p-5" data-doubao-line="337" data-doubao-column="25" data-doubao-key="139">
+                            <h3 class="text-xl font-bold mb-1" data-doubao-line="338" data-doubao-column="29" data-doubao-key="140">银杏树</h3>
+                            <p class="text-gray-600 text-sm mb-3" data-doubao-line="339" data-doubao-column="29" data-doubao-key="141">银杏科银杏属</p>
+                            <p class="text-gray-700 text-sm mb-4" data-doubao-line="340" data-doubao-column="29" data-doubao-key="142">落叶大乔木，叶扇形，秋季变为金黄色。雌雄异株，种子具长梗，下垂。</p>
+                            <button class="text-primary hover:text-dark font-medium text-sm inline-flex items-center transition-colors plant-detail-btn" data-id="2" data-doubao-line="341" data-doubao-column="29" data-doubao-key="143">
+                                查看详情 <i class="fa fa-angle-right ml-1" data-doubao-line="342" data-doubao-column="38" data-doubao-key="144"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 植物卡片3 -->
+                    <div class="plant-card bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all" data-doubao-line="348" data-doubao-column="21" data-doubao-key="145">
+                        <div class="relative h-60 overflow-hidden" data-doubao-line="349" data-doubao-column="25" data-doubao-key="146">
+                            <img src="Sandbox%20Document_files/152-600x800.jpg" alt="月季花" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" data-doubao-line="350" data-doubao-column="29" data-key="3d484b6c" data-review-status="0" data-src="https://picsum.photos/id/152/600/800" data-doubao-key="147">
+                            <span class="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-dark text-xs font-medium px-2 py-1 rounded-full" data-doubao-line="351" data-doubao-column="29" data-doubao-key="148">花卉</span>
+                        </div>
+                        <div class="p-5" data-doubao-line="353" data-doubao-column="25" data-doubao-key="149">
+                            <h3 class="text-xl font-bold mb-1" data-doubao-line="354" data-doubao-column="29" data-doubao-key="150">月季花</h3>
+                            <p class="text-gray-600 text-sm mb-3" data-doubao-line="355" data-doubao-column="29" data-doubao-key="151">蔷薇科蔷薇属</p>
+                            <p class="text-gray-700 text-sm mb-4" data-doubao-line="356" data-doubao-column="29" data-doubao-key="152">被称为花中皇后，四季开花，颜色丰富，有红、粉、黄、白等单色，还有混色、银边等品种。</p>
+                            <button class="text-primary hover:text-dark font-medium text-sm inline-flex items-center transition-colors plant-detail-btn" data-id="3" data-doubao-line="357" data-doubao-column="29" data-doubao-key="153">
+                                查看详情 <i class="fa fa-angle-right ml-1" data-doubao-line="358" data-doubao-column="38" data-doubao-key="154"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 植物卡片4 -->
+                    <div class="plant-card bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all" data-doubao-line="364" data-doubao-column="21" data-doubao-key="155">
+                        <div class="relative h-60 overflow-hidden" data-doubao-line="365" data-doubao-column="25" data-doubao-key="156">
+                            <img src="Sandbox%20Document_files/145-600x800.jpg" alt="紫薇树" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" data-doubao-line="366" data-doubao-column="29" data-key="1542b3c6" data-review-status="0" data-src="https://picsum.photos/id/145/600/800" data-doubao-key="157">
+                            <span class="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-dark text-xs font-medium px-2 py-1 rounded-full" data-doubao-line="367" data-doubao-column="29" data-doubao-key="158">特色品种</span>
+                        </div>
+                        <div class="p-5" data-doubao-line="369" data-doubao-column="25" data-doubao-key="159">
+                            <h3 class="text-xl font-bold mb-1" data-doubao-line="370" data-doubao-column="29" data-doubao-key="160">紫薇树</h3>
+                            <p class="text-gray-600 text-sm mb-3" data-doubao-line="371" data-doubao-column="29" data-doubao-key="161">千屈菜科紫薇属</p>
+                            <p class="text-gray-700 text-sm mb-4" data-doubao-line="372" data-doubao-column="29" data-doubao-key="162">我校建校时种植的古树，有"百日红"之称，夏季开花，花色艳丽，树干光滑。</p>
+                            <button class="text-primary hover:text-dark font-medium text-sm inline-flex items-center transition-colors plant-detail-btn" data-id="4" data-doubao-line="373" data-doubao-column="29" data-doubao-key="163">
+                                查看详情 <i class="fa fa-angle-right ml-1" data-doubao-line="374" data-doubao-column="38" data-doubao-key="164"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 查看更多按钮 -->
+                <div class="text-center" data-doubao-line="381" data-doubao-column="17" data-doubao-key="165">
+                    <button class="bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-medium transition-all" data-doubao-line="382" data-doubao-column="21" data-doubao-key="166">
+                        查看更多绿植 <i class="fa fa-arrow-down ml-2" data-doubao-line="383" data-doubao-column="32" data-doubao-key="167"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 物候观测模块 -->
+        <section id="phenology" class="py-16 bg-gradient-to-b from-primary/5 to-white" data-doubao-line="390" data-doubao-column="9" data-doubao-key="168">
+            <div class="container mx-auto px-4" data-doubao-line="391" data-doubao-column="13" data-doubao-key="169">
+                <div class="text-center mb-12" data-doubao-line="392" data-doubao-column="17" data-doubao-key="170">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark" data-doubao-line="393" data-doubao-column="21" data-doubao-key="171">物候观测</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto" data-doubao-line="394" data-doubao-column="21" data-doubao-key="172">记录校园植物的生长周期，形成独特的自然日历</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10" data-doubao-line="397" data-doubao-column="17" data-doubao-key="173">
+                    <!-- 物候图表 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md" data-doubao-line="399" data-doubao-column="21" data-doubao-key="174">
+                        <h3 class="text-xl font-bold mb-6 text-dark" data-doubao-line="400" data-doubao-column="25" data-doubao-key="175">历年物候数据对比</h3>
+                        <div class="phenology-chart-container" data-doubao-line="401" data-doubao-column="25" data-doubao-key="176">
+                            <canvas id="phenologyChart" data-doubao-line="402" data-doubao-column="29" data-doubao-key="177" style="display: block; box-sizing: border-box; height: 300px; width: 428px;" width="428" height="300"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- 本年度物候日历 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md" data-doubao-line="407" data-doubao-column="21" data-doubao-key="178">
+                        <h3 class="text-xl font-bold mb-6 text-dark" data-doubao-line="408" data-doubao-column="25" data-doubao-key="179">2023年度物候日历</h3>
+                        
+                        <div class="space-y-5" data-doubao-line="410" data-doubao-column="25" data-doubao-key="180">
+                            <div class="flex items-start" data-doubao-line="411" data-doubao-column="29" data-doubao-key="181">
+                                <div class="bg-primary/10 text-primary rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mt-1" data-doubao-line="412" data-doubao-column="33" data-doubao-key="182">
+                                    <i class="fa fa-pagelines" data-doubao-line="413" data-doubao-column="37" data-doubao-key="183"></i>
+                                </div>
+                                <div class="ml-4" data-doubao-line="415" data-doubao-column="33" data-doubao-key="184">
+                                    <h4 class="font-bold" data-doubao-line="416" data-doubao-column="37" data-doubao-key="185">樱花初绽日</h4>
+                                    <p class="text-gray-600 text-sm" data-doubao-line="417" data-doubao-column="37" data-doubao-key="186">3月15日 - 较去年提前2天</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start" data-doubao-line="421" data-doubao-column="29" data-doubao-key="187">
+                                <div class="bg-primary/10 text-primary rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mt-1" data-doubao-line="422" data-doubao-column="33" data-doubao-key="188">
+                                    <i class="fa fa-leaf" data-doubao-line="423" data-doubao-column="37" data-doubao-key="189"></i>
+                                </div>
+                                <div class="ml-4" data-doubao-line="425" data-doubao-column="33" data-doubao-key="190">
+                                    <h4 class="font-bold" data-doubao-line="426" data-doubao-column="37" data-doubao-key="191">银杏展叶日</h4>
+                                    <p class="text-gray-600 text-sm" data-doubao-line="427" data-doubao-column="37" data-doubao-key="192">4月8日 - 与去年基本持平</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start" data-doubao-line="431" data-doubao-column="29" data-doubao-key="193">
+                                <div class="bg-primary/10 text-primary rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mt-1" data-doubao-line="432" data-doubao-column="33" data-doubao-key="194">
+                                    <i class="fa fa-sun-o" data-doubao-line="433" data-doubao-column="37" data-doubao-key="195"></i>
+                                </div>
+                                <div class="ml-4" data-doubao-line="435" data-doubao-column="33" data-doubao-key="196">
+                                    <h4 class="font-bold" data-doubao-line="436" data-doubao-column="37" data-doubao-key="197">紫薇始花期</h4>
+                                    <p class="text-gray-600 text-sm" data-doubao-line="437" data-doubao-column="37" data-doubao-key="198">6月20日 - 较去年推迟3天</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start" data-doubao-line="441" data-doubao-column="29" data-doubao-key="199">
+                                <div class="bg-primary/10 text-primary rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mt-1" data-doubao-line="442" data-doubao-column="33" data-doubao-key="200">
+                                    <i class="fa fa-tree" data-doubao-line="443" data-doubao-column="37" data-doubao-key="201"></i>
+                                </div>
+                                <div class="ml-4" data-doubao-line="445" data-doubao-column="33" data-doubao-key="202">
+                                    <h4 class="font-bold" data-doubao-line="446" data-doubao-column="37" data-doubao-key="203">梧桐落叶始期</h4>
+                                    <p class="text-gray-600 text-sm" data-doubao-line="447" data-doubao-column="37" data-doubao-key="204">10月5日 - 预计日期</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start" data-doubao-line="451" data-doubao-column="29" data-doubao-key="205">
+                                <div class="bg-primary/10 text-primary rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mt-1" data-doubao-line="452" data-doubao-column="33" data-doubao-key="206">
+                                    <i class="fa fa-snowflake-o" data-doubao-line="453" data-doubao-column="37" data-doubao-key="207"></i>
+                                </div>
+                                <div class="ml-4" data-doubao-line="455" data-doubao-column="33" data-doubao-key="208">
+                                    <h4 class="font-bold" data-doubao-line="456" data-doubao-column="37" data-doubao-key="209">松针休眠期</h4>
+                                    <p class="text-gray-600 text-sm" data-doubao-line="457" data-doubao-column="37" data-doubao-key="210">12月1日 - 预计日期</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="mt-6 w-full bg-primary/10 hover:bg-primary/20 text-primary py-3 rounded-lg font-medium transition-colors" data-doubao-line="462" data-doubao-column="25" data-doubao-key="211">
+                            查看完整物候日历
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 识别技巧 -->
+                <div class="mt-16 bg-white p-8 rounded-xl shadow-md" data-doubao-line="469" data-doubao-column="17" data-doubao-key="212">
+                    <h3 class="text-2xl font-bold mb-6 text-dark" data-doubao-line="470" data-doubao-column="21" data-doubao-key="213">绿植识别技巧</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-doubao-line="472" data-doubao-column="21" data-doubao-key="214">
+                        <div class="border border-gray-100 rounded-lg p-5 hover:border-primary/30 hover:shadow-md transition-all" data-doubao-line="473" data-doubao-column="25" data-doubao-key="215">
+                            <div class="text-primary text-3xl mb-4" data-doubao-line="474" data-doubao-column="29" data-doubao-key="216">
+                                <i class="fa fa-leaf" data-doubao-line="475" data-doubao-column="33" data-doubao-key="217"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2" data-doubao-line="477" data-doubao-column="29" data-doubao-key="218">通过叶子识别</h4>
+                            <p class="text-gray-600 text-sm" data-doubao-line="478" data-doubao-column="29" data-doubao-key="219">观察叶子的形状（圆形、针形、心形等）、边缘（锯齿状、光滑等）和排列方式（对生、互生等）来识别植物。</p>
+                        </div>
+                        
+                        <div class="border border-gray-100 rounded-lg p-5 hover:border-primary/30 hover:shadow-md transition-all" data-doubao-line="481" data-doubao-column="25" data-doubao-key="220">
+                            <div class="text-primary text-3xl mb-4" data-doubao-line="482" data-doubao-column="29" data-doubao-key="221">
+                                <i class="fa fa-pagelines" data-doubao-line="483" data-doubao-column="33" data-doubao-key="222"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2" data-doubao-line="485" data-doubao-column="29" data-doubao-key="223">通过花朵识别</h4>
+                            <p class="text-gray-600 text-sm" data-doubao-line="486" data-doubao-column="29" data-doubao-key="224">花朵的颜色、形状、花瓣数量和排列方式是识别植物的重要特征，尤其是在开花季节。</p>
+                        </div>
+                        
+                        <div class="border border-gray-100 rounded-lg p-5 hover:border-primary/30 hover:shadow-md transition-all" data-doubao-line="489" data-doubao-column="25" data-doubao-key="225">
+                            <div class="text-primary text-3xl mb-4" data-doubao-line="490" data-doubao-column="29" data-doubao-key="226">
+                                <i class="fa fa-tree" data-doubao-line="491" data-doubao-column="33" data-doubao-key="227"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2" data-doubao-line="493" data-doubao-column="29" data-doubao-key="228">通过树干识别</h4>
+                            <p class="text-gray-600 text-sm" data-doubao-line="494" data-doubao-column="29" data-doubao-key="229">树皮的纹理、颜色和质地，以及树枝的生长方式，也是识别树木的重要依据。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 互动小测试 -->
+                    <div class="mt-8 p-6 bg-primary/5 rounded-lg" data-doubao-line="499" data-doubao-column="21" data-doubao-key="230">
+                        <h4 class="text-xl font-bold mb-4" data-doubao-line="500" data-doubao-column="25" data-doubao-key="231">识别小测试</h4>
+                        <p class="text-gray-700 mb-6" data-doubao-line="501" data-doubao-column="25" data-doubao-key="232">根据以下特征，你能判断这是哪种植物吗？</p>
+                        
+                        <div class="bg-white p-4 rounded-lg mb-4" data-doubao-line="503" data-doubao-column="25" data-doubao-key="233">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2" data-doubao-line="504" data-doubao-column="29" data-doubao-key="234">
+                                <li data-doubao-line="505" data-doubao-column="33" data-doubao-key="235">落叶乔木，树皮灰色，不裂</li>
+                                <li data-doubao-line="506" data-doubao-column="33" data-doubao-key="236">叶片呈扇形，有长柄，秋季变为金黄色</li>
+                                <li data-doubao-line="507" data-doubao-column="33" data-doubao-key="237">雌雄异株，种子椭圆形</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-3" data-doubao-line="511" data-doubao-column="25" data-doubao-key="238">
+                            <button class="px-5 py-2 border border-gray-300 rounded-lg hover:border-primary hover:text-primary transition-colors" data-doubao-line="512" data-doubao-column="29" data-doubao-key="239">樱花树</button>
+                            <button class="px-5 py-2 border border-gray-300 rounded-lg hover:border-primary hover:text-primary transition-colors" data-doubao-line="513" data-doubao-column="29" data-doubao-key="240">银杏树</button>
+                            <button class="px-5 py-2 border border-gray-300 rounded-lg hover:border-primary hover:text-primary transition-colors" data-doubao-line="514" data-doubao-column="29" data-doubao-key="241">梧桐树</button>
+                            <button class="px-5 py-2 border border-gray-300 rounded-lg hover:border-primary hover:text-primary transition-colors" data-doubao-line="515" data-doubao-column="29" data-doubao-key="242">紫薇树</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 养护知识模块 -->
+        <section id="care" class="py-16 bg-white" data-doubao-line="523" data-doubao-column="9" data-doubao-key="243">
+            <div class="container mx-auto px-4" data-doubao-line="524" data-doubao-column="13" data-doubao-key="244">
+                <div class="text-center mb-12" data-doubao-line="525" data-doubao-column="17" data-doubao-key="245">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark" data-doubao-line="526" data-doubao-column="21" data-doubao-key="246">绿植养护知识</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto" data-doubao-line="527" data-doubao-column="21" data-doubao-key="247">学习专业的植物养护技巧，让校园绿植健康成长</p>
+                </div>
+                
+                <!-- 养护知识分类 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16" data-doubao-line="531" data-doubao-column="17" data-doubao-key="248">
+                    <!-- 日常养护 -->
+                    <div class="bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all" data-doubao-line="533" data-doubao-column="21" data-doubao-key="249">
+                        <div class="h-48 overflow-hidden" data-doubao-line="534" data-doubao-column="25" data-doubao-key="250">
+                            <img src="Sandbox%20Document_files/184-800x600.jpg" alt="日常养护" class="w-full h-full object-cover" data-doubao-line="535" data-doubao-column="29" data-key="76f4b9cd" data-review-status="0" data-src="https://picsum.photos/id/184/800/600" data-doubao-key="251">
+                        </div>
+                        <div class="p-6" data-doubao-line="537" data-doubao-column="25" data-doubao-key="252">
+                            <div class="flex items-center mb-4" data-doubao-line="538" data-doubao-column="29" data-doubao-key="253">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-3" data-doubao-line="539" data-doubao-column="33" data-doubao-key="254">
+                                    <i class="fa fa-calendar-check-o text-primary" data-doubao-line="540" data-doubao-column="37" data-doubao-key="255"></i>
+                                </div>
+                                <h3 class="text-xl font-bold" data-doubao-line="542" data-doubao-column="33" data-doubao-key="256">日常养护</h3>
+                            </div>
+                            
+                            <div class="space-y-4 mb-6" data-doubao-line="545" data-doubao-column="29" data-doubao-key="257">
+                                <div data-doubao-line="546" data-doubao-column="33" data-doubao-key="258">
+                                    <h4 class="font-bold text-dark mb-1" data-doubao-line="547" data-doubao-column="37" data-doubao-key="259">浇水要点</h4>
+                                    <p class="text-gray-600 text-sm" data-doubao-line="548" data-doubao-column="37" data-doubao-key="260">不同植物对水分需求不同，多数植物遵循"见干见湿"原则，即表层土壤干燥后再浇水，浇则浇透。</p>
+                                </div>
+                                
+                                <div data-doubao-line="551" data-doubao-column="33" data-doubao-key="261">
+                                    <h4 class="font-bold text-dark mb-1" data-doubao-line="552" data-doubao-column="37" data-doubao-key="262">施肥方法</h4>
+                                    <p class="text-gray-600 text-sm" data-doubao-line="553" data-doubao-column="37" data-doubao-key="263">生长期多施氮肥促进枝叶生长，开花前增施磷钾肥促进开花结果，冬季多数植物停止施肥。</p>
+                                </div>
+                                
+                                <div data-doubao-line="556" data-doubao-column="33" data-doubao-key="264">
+                                    <h4 class="font-bold text-dark mb-1" data-doubao-line="557" data-doubao-column="37" data-doubao-key="265">光照管理</h4>
+                                    <p class="text-gray-600 text-sm" data-doubao-line="558" data-doubao-column="37" data-doubao-key="266">喜阳植物需放置在阳光充足处，喜阴植物适合散射光环境，夏季注意适当遮阴防晒。</p>
+                                </div>
+                            </div>
+                            
+                            <a href="#" class="text-primary hover:text-dark font-medium inline-flex items-center transition-colors" data-doubao-line="562" data-doubao-column="29" data-doubao-key="267">
+                                查看详细指南 <i class="fa fa-arrow-right ml-1 text-sm" data-doubao-line="563" data-doubao-column="40" data-doubao-key="268"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 季节养护 -->
+                    <div class="bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all" data-doubao-line="569" data-doubao-column="21" data-doubao-key="269">
+                        <div class="h-48 overflow-hidden" data-doubao-line="570" data-doubao-column="25" data-doubao-key="270">
+                            <img src="Sandbox%20Document_files/116-800x600.jpg" alt="季节养护" class="w-full h-full object-cover" data-doubao-line="571" data-doubao-column="29" data-key="80b5a25a" data-review-status="0" data-src="https://picsum.photos/id/116/800/600" data-doubao-key="271">
+                        </div>
+                        <div class="p-6" data-doubao-line="573" data-doubao-column="25" data-doubao-key="272">
+                            <div class="flex items-center mb-4" data-doubao-line="574" data-doubao-column="29" data-doubao-key="273">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-3" data-doubao-line="575" data-doubao-column="33" data-doubao-key="274">
+                                    <i class="fa fa-calendar text-primary" data-doubao-line="576" data-doubao-column="37" data-doubao-key="275"></i>
+                                </div>
+                                <h3 class="text-xl font-bold" data-doubao-line="578" data-doubao-column="33" data-doubao-key="276">季节养护</h3>
+                            </div>
+                            
+                            <div class="space-y-4 mb-6" data-doubao-line="581" data-doubao-column="29" data-doubao-key="277">
+                                <div data-doubao-line="582" data-doubao-column="33" data-doubao-key="278">
+                                    <h4 class="font-bold text-dark mb-1" data-doubao-line="583" data-doubao-column="37" data-doubao-key="279">春季养护</h4>
+                                    <p class="text-gray-600 text-sm" data-doubao-line="584" data-doubao-column="37" data-doubao-key="280">春季是植物生长旺季，应及时施肥、换盆，修剪病弱枝，促进新枝萌发。</p>
+                                </div>
+                                
+                                <div data-doubao-line="587" data-doubao-column="33" data-doubao-key="281">
+                                    <h4 class="font-bold text-dark mb-1" data-doubao-line="588" data-doubao-column="37" data-doubao-key="282">夏季养护</h4>
+                                    <p class="text-gray-600 text-sm" data-doubao-line="589" data-doubao-column="37" data-doubao-key="283">高温季节注意遮阴降温，增加空气湿度，防止干旱和病虫害发生。</p>
+                                </div>
+                                
+                                <div data-doubao-line="592" data-doubao-column="33" data-doubao-key="284">
+                                    <h4 class="font-bold text-dark mb-1" data-doubao-line="593" data-doubao-column="37" data-doubao-key="285">秋冬养护</h4>
+                                    <p class="text-gray-600 text-sm" data-doubao-line="594" data-doubao-column="37" data-doubao-key="286">秋季增施磷钾肥增强抗寒能力，冬季注意防寒保暖，减少浇水。</p>
+                                </div>
+                            </div>
+                            
+                            <a href="#" class="text-primary hover:text-dark font-medium inline-flex items-center transition-colors" data-doubao-line="598" data-doubao-column="29" data-doubao-key="287">
+                                查看详细指南 <i class="fa fa-arrow-right ml-1 text-sm" data-doubao-line="599" data-doubao-column="40" data-doubao-key="288"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 问题处理与专属配方 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" data-doubao-line="606" data-doubao-column="17" data-doubao-key="289">
+                    <!-- 问题处理 -->
+                    <div class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-all" data-doubao-line="608" data-doubao-column="21" data-doubao-key="290">
+                        <h3 class="text-xl font-bold mb-6 text-dark flex items-center" data-doubao-line="609" data-doubao-column="25" data-doubao-key="291">
+                            <i class="fa fa-medkit text-primary mr-3" data-doubao-line="610" data-doubao-column="29" data-doubao-key="292"></i> 常见问题处理
+                        </h3>
+                        
+                        <div class="space-y-6" data-doubao-line="613" data-doubao-column="25" data-doubao-key="293">
+                            <div data-doubao-line="614" data-doubao-column="29" data-doubao-key="294">
+                                <h4 class="font-bold text-dark mb-2 flex items-center" data-doubao-line="615" data-doubao-column="33" data-doubao-key="295">
+                                    叶片发黄 <i class="fa fa-question-circle text-gray-400 ml-2 text-sm" data-doubao-line="616" data-doubao-column="42" data-doubao-key="296"></i>
+                                </h4>
+                                <div class="bg-light p-4 rounded-lg" data-doubao-line="618" data-doubao-column="33" data-doubao-key="297">
+                                    <p class="text-gray-700 mb-3" data-doubao-line="619" data-doubao-column="37" data-doubao-key="298">可能原因：浇水过多或过少、光照不足、土壤酸碱度不适。</p>
+                                    <p class="text-gray-700 font-medium" data-doubao-line="620" data-doubao-column="37" data-doubao-key="299">解决方法：</p>
+                                    <ul class="list-disc list-inside text-gray-600 text-sm ml-2 space-y-1" data-doubao-line="621" data-doubao-column="37" data-doubao-key="300">
+                                        <li data-doubao-line="622" data-doubao-column="41" data-doubao-key="301">调整浇水频率，保持土壤湿润但不积水</li>
+                                        <li data-doubao-line="623" data-doubao-column="41" data-doubao-key="302">移至光照适宜的位置</li>
+                                        <li data-doubao-line="624" data-doubao-column="41" data-doubao-key="303">根据植物需求调节土壤酸碱度</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div data-doubao-line="629" data-doubao-column="29" data-doubao-key="304">
+                                <h4 class="font-bold text-dark mb-2 flex items-center" data-doubao-line="630" data-doubao-column="33" data-doubao-key="305">
+                                    病虫害防治 <i class="fa fa-question-circle text-gray-400 ml-2 text-sm" data-doubao-line="631" data-doubao-column="43" data-doubao-key="306"></i>
+                                </h4>
+                                <div class="bg-light p-4 rounded-lg" data-doubao-line="633" data-doubao-column="33" data-doubao-key="307">
+                                    <p class="text-gray-700 mb-3" data-doubao-line="634" data-doubao-column="37" data-doubao-key="308">常见病虫害：蚜虫、红蜘蛛、白粉病、叶斑病。</p>
+                                    <p class="text-gray-700 font-medium" data-doubao-line="635" data-doubao-column="37" data-doubao-key="309">防治方法：</p>
+                                    <ul class="list-disc list-inside text-gray-600 text-sm ml-2 space-y-1" data-doubao-line="636" data-doubao-column="37" data-doubao-key="310">
+                                        <li data-doubao-line="637" data-doubao-column="41" data-doubao-key="311">定期检查，发现病虫害及时处理</li>
+                                        <li data-doubao-line="638" data-doubao-column="41" data-doubao-key="312">少量害虫可人工清除，严重时使用合适的农药</li>
+                                        <li data-doubao-line="639" data-doubao-column="41" data-doubao-key="313">加强通风，合理施肥，增强植物抗病能力</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="mt-6 w-full bg-primary/10 hover:bg-primary/20 text-primary py-3 rounded-lg font-medium transition-colors" data-doubao-line="645" data-doubao-column="25" data-doubao-key="314">
+                            查看更多问题解决方案
+                        </button>
+                    </div>
+                    
+                    <!-- 专属配方 -->
+                    <div class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-all" data-doubao-line="651" data-doubao-column="21" data-doubao-key="315">
+                        <h3 class="text-xl font-bold mb-6 text-dark flex items-center" data-doubao-line="652" data-doubao-column="25" data-doubao-key="316">
+                            <i class="fa fa-flask text-primary mr-3" data-doubao-line="653" data-doubao-column="29" data-doubao-key="317"></i> 校园绿植专属配方
+                        </h3>
+                        
+                        <div class="space-y-6" data-doubao-line="656" data-doubao-column="25" data-doubao-key="318">
+                            <div data-doubao-line="657" data-doubao-column="29" data-doubao-key="319">
+                                <h4 class="font-bold text-dark mb-2" data-doubao-line="658" data-doubao-column="33" data-doubao-key="320">自制有机液肥</h4>
+                                <div class="bg-light p-4 rounded-lg" data-doubao-line="659" data-doubao-column="33" data-doubao-key="321">
+                                    <p class="text-gray-700 mb-3" data-doubao-line="660" data-doubao-column="37" data-doubao-key="322">材料：果皮、菜叶、淘米水、红糖</p>
+                                    <p class="text-gray-700 font-medium mb-2" data-doubao-line="661" data-doubao-column="37" data-doubao-key="323">制作方法：</p>
+                                    <ol class="list-decimal list-inside text-gray-600 text-sm ml-2 space-y-1" data-doubao-line="662" data-doubao-column="37" data-doubao-key="324">
+                                        <li data-doubao-line="663" data-doubao-column="41" data-doubao-key="325">将果皮、菜叶切碎放入塑料瓶中</li>
+                                        <li data-doubao-line="664" data-doubao-column="41" data-doubao-key="326">加入淘米水至瓶身2/3处，加少量红糖</li>
+                                        <li data-doubao-line="665" data-doubao-column="41" data-doubao-key="327">密封瓶口，放在阴凉处发酵1-2个月</li>
+                                        <li data-doubao-line="666" data-doubao-column="41" data-doubao-key="328">使用时稀释10-20倍，适合观叶植物</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            
+                            <div data-doubao-line="671" data-doubao-column="29" data-doubao-key="329">
+                                <h4 class="font-bold text-dark mb-2" data-doubao-line="672" data-doubao-column="33" data-doubao-key="330">天然驱虫剂</h4>
+                                <div class="bg-light p-4 rounded-lg" data-doubao-line="673" data-doubao-column="33" data-doubao-key="331">
+                                    <p class="text-gray-700 mb-3" data-doubao-line="674" data-doubao-column="37" data-doubao-key="332">材料：大蒜、辣椒、肥皂水</p>
+                                    <p class="text-gray-700 font-medium mb-2" data-doubao-line="675" data-doubao-column="37" data-doubao-key="333">制作方法：</p>
+                                    <ol class="list-decimal list-inside text-gray-600 text-sm ml-2 space-y-1" data-doubao-line="676" data-doubao-column="37" data-doubao-key="334">
+                                        <li data-doubao-line="677" data-doubao-column="41" data-doubao-key="335">大蒜和辣椒捣碎，加入适量水浸泡24小时</li>
+                                        <li data-doubao-line="678" data-doubao-column="41" data-doubao-key="336">过滤后加入少量肥皂水混合</li>
+                                        <li data-doubao-line="679" data-doubao-column="41" data-doubao-key="337">装入喷瓶，喷洒在植物叶片上可有效防治蚜虫</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="mt-6 w-full bg-primary/10 hover:bg-primary/20 text-primary py-3 rounded-lg font-medium transition-colors" data-doubao-line="685" data-doubao-column="25" data-doubao-key="338">
+                            查看更多养护配方
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 校园活动模块 -->
+        <section id="events" class="py-16 bg-gradient-to-b from-white to-primary/5" data-doubao-line="694" data-doubao-column="9" data-doubao-key="339">
+            <div class="container mx-auto px-4" data-doubao-line="695" data-doubao-column="13" data-doubao-key="340">
+                <div class="text-center mb-12" data-doubao-line="696" data-doubao-column="17" data-doubao-key="341">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark" data-doubao-line="697" data-doubao-column="21" data-doubao-key="342">校园绿植活动</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto" data-doubao-line="698" data-doubao-column="21" data-doubao-key="343">参与校园绿植相关活动，共同守护校园绿色环境</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-doubao-line="701" data-doubao-column="17" data-doubao-key="344">
+                    <!-- 活动1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all" data-doubao-line="703" data-doubao-column="21" data-doubao-key="345">
+                        <div class="relative" data-doubao-line="704" data-doubao-column="25" data-doubao-key="346">
+                            <img src="Sandbox%20Document_files/119-600x400.jpg" alt="春季植树活动" class="w-full h-48 object-cover" data-doubao-line="705" data-doubao-column="29" data-key="2ac4a1d3" data-review-status="0" data-src="https://picsum.photos/id/119/600/400" data-doubao-key="347">
+                            <div class="absolute top-4 left-4 bg-primary text-white text-sm font-bold px-3 py-1 rounded-full" data-doubao-line="706" data-doubao-column="29" data-doubao-key="348">
+                                已结束
+                            </div>
+                        </div>
+                        <div class="p-6" data-doubao-line="710" data-doubao-column="25" data-doubao-key="349">
+                            <div class="flex items-center text-gray-500 text-sm mb-3" data-doubao-line="711" data-doubao-column="29" data-doubao-key="350">
+                                <i class="fa fa-calendar mr-2" data-doubao-line="712" data-doubao-column="33" data-doubao-key="351"></i> 2023年3月12日
+                            </div>
+                            <h3 class="text-xl font-bold mb-3" data-doubao-line="714" data-doubao-column="29" data-doubao-key="352">春季植树活动</h3>
+                            <p class="text-gray-600 text-sm mb-4" data-doubao-line="715" data-doubao-column="29" data-doubao-key="353">在植树节当天，组织师生共同种植新树苗，为校园增添绿色，培养环保意识。</p>
+                            <div class="flex items-center text-gray-500 text-sm mb-6" data-doubao-line="716" data-doubao-column="29" data-doubao-key="354">
+                                <i class="fa fa-map-marker mr-2" data-doubao-line="717" data-doubao-column="33" data-doubao-key="355"></i> 校园东区绿化带
+                            </div>
+                            <a href="#" class="text-primary hover:text-dark font-medium inline-flex items-center transition-colors" data-doubao-line="719" data-doubao-column="29" data-doubao-key="356">
+                                查看活动回顾 <i class="fa fa-arrow-right ml-1 text-sm" data-doubao-line="720" data-doubao-column="40" data-doubao-key="357"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 活动2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all" data-doubao-line="726" data-doubao-column="21" data-doubao-key="358">
+                        <div class="relative" data-doubao-line="727" data-doubao-column="25" data-doubao-key="359">
+                            <img src="Sandbox%20Document_files/106-600x400.jpg" alt="校园樱花节" class="w-full h-48 object-cover" data-doubao-line="728" data-doubao-column="29" data-key="b376e491" data-review-status="0" data-src="https://picsum.photos/id/106/600/400" data-doubao-key="360">
+                            <div class="absolute top-4 left-4 bg-accent text-dark text-sm font-bold px-3 py-1 rounded-full" data-doubao-line="729" data-doubao-column="29" data-doubao-key="361">
+                                即将开始
+                            </div>
+                        </div>
+                        <div class="p-6" data-doubao-line="733" data-doubao-column="25" data-doubao-key="362">
+                            <div class="flex items-center text-gray-500 text-sm mb-3" data-doubao-line="734" data-doubao-column="29" data-doubao-key="363">
+                                <i class="fa fa-calendar mr-2" data-doubao-line="735" data-doubao-column="33" data-doubao-key="364"></i> 2023年4月5日-15日
+                            </div>
+                            <h3 class="text-xl font-bold mb-3" data-doubao-line="737" data-doubao-column="29" data-doubao-key="365">校园樱花节</h3>
+                            <p class="text-gray-600 text-sm mb-4" data-doubao-line="738" data-doubao-column="29" data-doubao-key="366">樱花盛开期间，举办摄影比赛、樱花知识讲座、樱花书签制作等系列活动。</p>
+                            <div class="flex items-center text-gray-500 text-sm mb-6" data-doubao-line="739" data-doubao-column="29" data-doubao-key="367">
+                                <i class="fa fa-map-marker mr-2" data-doubao-line="740" data-doubao-column="33" data-doubao-key="368"></i> 校园樱花大道及多功能厅
+                            </div>
+                            <a href="#" class="text-primary hover:text-dark font-medium inline-flex items-center transition-colors" data-doubao-line="742" data-doubao-column="29" data-doubao-key="369">
+                                了解活动详情 <i class="fa fa-arrow-right ml-1 text-sm" data-doubao-line="743" data-doubao-column="40" data-doubao-key="370"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 活动3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all" data-doubao-line="749" data-doubao-column="21" data-doubao-key="371">
+                        <div class="relative" data-doubao-line="750" data-doubao-column="25" data-doubao-key="372">
+                            <img src="Sandbox%20Document_files/184-600x400.jpg" alt="绿植养护培训" class="w-full h-48 object-cover" data-doubao-line="751" data-doubao-column="29" data-key="cd6e36d8" data-review-status="0" data-src="https://picsum.photos/id/184/600/400" data-doubao-key="373">
+                            <div class="absolute top-4 left-4 bg-primary text-white text-sm font-bold px-3 py-1 rounded-full" data-doubao-line="752" data-doubao-column="29" data-doubao-key="374">
+                                定期活动
+                            </div>
+                        </div>
+                        <div class="p-6" data-doubao-line="756" data-doubao-column="25" data-doubao-key="375">
+                            <div class="flex items-center text-gray-500 text-sm mb-3" data-doubao-line="757" data-doubao-column="29" data-doubao-key="376">
+                                <i class="fa fa-calendar mr-2" data-doubao-line="758" data-doubao-column="33" data-doubao-key="377"></i> 每月第一个周六
+                            </div>
+                            <h3 class="text-xl font-bold mb-3" data-doubao-line="760" data-doubao-column="29" data-doubao-key="378">绿植养护培训</h3>
+                            <p class="text-gray-600 text-sm mb-4" data-doubao-line="761" data-doubao-column="29" data-doubao-key="379">由专业园艺师指导，学习植物识别、日常养护、病虫害防治等专业知识和技能。</p>
+                            <div class="flex items-center text-gray-500 text-sm mb-6" data-doubao-line="762" data-doubao-column="29" data-doubao-key="380">
+                                <i class="fa fa-map-marker mr-2" data-doubao-line="763" data-doubao-column="33" data-doubao-key="381"></i> 校园 greenhouse
+                            </div>
+                            <a href="#" class="text-primary hover:text-dark font-medium inline-flex items-center transition-colors" data-doubao-line="765" data-doubao-column="29" data-doubao-key="382">
+                                报名参加 <i class="fa fa-arrow-right ml-1 text-sm" data-doubao-line="766" data-doubao-column="38" data-doubao-key="383"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 活动日历 -->
+                <div class="mt-16 bg-white p-6 rounded-xl shadow-md" data-doubao-line="773" data-doubao-column="17" data-doubao-key="384">
+                    <h3 class="text-xl font-bold mb-6 text-dark" data-doubao-line="774" data-doubao-column="21" data-doubao-key="385">2023年绿植活动日历</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-1 text-center text-sm" data-doubao-line="776" data-doubao-column="21" data-doubao-key="386">
+                        <!-- 月份标题 -->
+                        <div class="md:col-span-12 bg-primary text-white font-bold py-2 rounded-t-lg" data-doubao-line="778" data-doubao-column="25" data-doubao-key="387">2023年</div>
+                        
+                        <!-- 月份 -->
+                        <div class="p-2 border border-gray-100 font-medium" data-doubao-line="781" data-doubao-column="25" data-doubao-key="388">一月</div>
+                        <div class="p-2 border border-gray-100 font-medium" data-doubao-line="782" data-doubao-column="25" data-doubao-key="389">二月</div>
+                        <div class="p-2 border border-gray-100 font-medium bg-primary/10" data-doubao-line="783" data-doubao-column="25" data-doubao-key="390">三月</div>
+                        <div class="p-2 border border-gray-100 font-medium bg-primary/10" data-doubao-line="784" data-doubao-column="25" data-doubao-key="391">四月</div>
+                        <div class="p-2 border border-gray-100 font-medium" data-doubao-line="785" data-doubao-column="25" data-doubao-key="392">五月</div>
+                        <div class="p-2 border border-gray-100 font-medium" data-doubao-line="786" data-doubao-column="25" data-doubao-key="393">六月</div>
+                        <div class="p-2 border border-gray-100 font-medium" data-doubao-line="787" data-doubao-column="25" data-doubao-key="394">七月</div>
+                        <div class="p-2 border border-gray-100 font-medium" data-doubao-line="788" data-doubao-column="25" data-doubao-key="395">八月</div>
+                        <div class="p-2 border border-gray-100 font-medium" data-doubao-line="789" data-doubao-column="25" data-doubao-key="396">九月</div>
+                        <div class="p-2 border border-gray-100 font-medium" data-doubao-line="790" data-doubao-column="25" data-doubao-key="397">十月</div>
+                        <div class="p-2 border border-gray-100 font-medium" data-doubao-line="791" data-doubao-column="25" data-doubao-key="398">十一月</div>
+                        <div class="p-2 border border-gray-100 font-medium" data-doubao-line="792" data-doubao-column="25" data-doubao-key="399">十二月</div>
+                        
+                        <!-- 活动标记 -->
+                        <div class="p-2 border border-gray-100" data-doubao-line="795" data-doubao-column="25" data-doubao-key="400">
+                            <div class="w-2 h-2 bg-gray-300 rounded-full mx-auto" data-doubao-line="796" data-doubao-column="29" data-doubao-key="401"></div>
+                        </div>
+                        <div class="p-2 border border-gray-100" data-doubao-line="798" data-doubao-column="25" data-doubao-key="402">
+                            <div class="w-2 h-2 bg-gray-300 rounded-full mx-auto" data-doubao-line="799" data-doubao-column="29" data-doubao-key="403"></div>
+                        </div>
+                        <div class="p-2 border border-gray-100" data-doubao-line="801" data-doubao-column="25" data-doubao-key="404">
+                            <div class="w-2 h-2 bg-primary rounded-full mx-auto relative group" data-doubao-line="802" data-doubao-column="29" data-doubao-key="405">
+                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-40 bg-dark text-white text-xs p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" data-doubao-line="803" data-doubao-column="33" data-doubao-key="406">
+                                    3月12日 植树活动
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 border border-gray-100" data-doubao-line="808" data-doubao-column="25" data-doubao-key="407">
+                            <div class="w-2 h-2 bg-accent rounded-full mx-auto relative group" data-doubao-line="809" data-doubao-column="29" data-doubao-key="408">
+                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-40 bg-dark text-white text-xs p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" data-doubao-line="810" data-doubao-column="33" data-doubao-key="409">
+                                    4月5-15日 樱花节
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 border border-gray-100" data-doubao-line="815" data-doubao-column="25" data-doubao-key="410">
+                            <div class="w-2 h-2 bg-primary rounded-full mx-auto relative group" data-doubao-line="816" data-doubao-column="29" data-doubao-key="411">
+                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-40 bg-dark text-white text-xs p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" data-doubao-line="817" data-doubao-column="33" data-doubao-key="412">
+                                    5月6日 养护培训
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 border border-gray-100" data-doubao-line="822" data-doubao-column="25" data-doubao-key="413">
+                            <div class="w-2 h-2 bg-primary rounded-full mx-auto relative group" data-doubao-line="823" data-doubao-column="29" data-doubao-key="414">
+                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-40 bg-dark text-white text-xs p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" data-doubao-line="824" data-doubao-column="33" data-doubao-key="415">
+                                    6月3日 养护培训
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 border border-gray-100" data-doubao-line="829" data-doubao-column="25" data-doubao-key="416">
+                            <div class="w-2 h-2 bg-primary rounded-full mx-auto relative group" data-doubao-line="830" data-doubao-column="29" data-doubao-key="417">
+                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-40 bg-dark text-white text-xs p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" data-doubao-line="831" data-doubao-column="33" data-doubao-key="418">
+                                    7月1日 养护培训
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 border border-gray-100" data-doubao-line="836" data-doubao-column="25" data-doubao-key="419">
+                            <div class="w-2 h-2 bg-gray-300 rounded-full mx-auto" data-doubao-line="837" data-doubao-column="29" data-doubao-key="420"></div>
+                        </div>
+                        <div class="p-2 border border-gray-100" data-doubao-line="839" data-doubao-column="25" data-doubao-key="421">
+                            <div class="w-2 h-2 bg-primary rounded-full mx-auto relative group" data-doubao-line="840" data-doubao-column="29" data-doubao-key="422">
+                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-40 bg-dark text-white text-xs p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" data-doubao-line="841" data-doubao-column="33" data-doubao-key="423">
+                                    9月2日 养护培训
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 border border-gray-100" data-doubao-line="846" data-doubao-column="25" data-doubao-key="424">
+                            <div class="w-2 h-2 bg-primary rounded-full mx-auto relative group" data-doubao-line="847" data-doubao-column="29" data-doubao-key="425">
+                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-40 bg-dark text-white text-xs p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" data-doubao-line="848" data-doubao-column="33" data-doubao-key="426">
+                                    10月7日 养护培训
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 border border-gray-100" data-doubao-line="853" data-doubao-column="25" data-doubao-key="427">
+                            <div class="w-2 h-2 bg-primary rounded-full mx-auto relative group" data-doubao-line="854" data-doubao-column="29" data-doubao-key="428">
+                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-40 bg-dark text-white text-xs p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" data-doubao-line="855" data-doubao-column="33" data-doubao-key="429">
+                                    11月4日 养护培训
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 border border-gray-100 rounded-b-lg" data-doubao-line="860" data-doubao-column="25" data-doubao-key="430">
+                            <div class="w-2 h-2 bg-primary rounded-full mx-auto relative group" data-doubao-line="861" data-doubao-column="29" data-doubao-key="431">
+                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-40 bg-dark text-white text-xs p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" data-doubao-line="862" data-doubao-column="33" data-doubao-key="432">
+                                    12月2日 养护培训
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 联系我们 -->
+        <section id="contact" class="py-16 bg-white" data-doubao-line="873" data-doubao-column="9" data-doubao-key="433">
+            <div class="container mx-auto px-4" data-doubao-line="874" data-doubao-column="13" data-doubao-key="434">
+                <div class="max-w-4xl mx-auto" data-doubao-line="875" data-doubao-column="17" data-doubao-key="435">
+                    <div class="text-center mb-12" data-doubao-line="876" data-doubao-column="21" data-doubao-key="436">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark" data-doubao-line="877" data-doubao-column="25" data-doubao-key="437">联系我们</h2>
+                        <p class="text-gray-600 max-w-2xl mx-auto" data-doubao-line="878" data-doubao-column="25" data-doubao-key="438">如果您有任何关于校园绿植的问题或建议，欢迎与我们联系</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10" data-doubao-line="881" data-doubao-column="21" data-doubao-key="439">
+                        <!-- 联系信息 -->
+                        <div data-doubao-line="883" data-doubao-column="25" data-doubao-key="440">
+                            <div class="bg-light rounded-xl p-6 h-full" data-doubao-line="884" data-doubao-column="29" data-doubao-key="441">
+                                <h3 class="text-xl font-bold mb-6 text-dark" data-doubao-line="885" data-doubao-column="33" data-doubao-key="442">联系方式</h3>
+                                
+                                <div class="space-y-6" data-doubao-line="887" data-doubao-column="33" data-doubao-key="443">
+                                    <div class="flex items-start" data-doubao-line="888" data-doubao-column="37" data-doubao-key="444">
+                                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1" data-doubao-line="889" data-doubao-column="41" data-doubao-key="445">
+                                            <i class="fa fa-map-marker text-primary" data-doubao-line="890" data-doubao-column="45" data-doubao-key="446"></i>
+                                        </div>
+                                        <div class="ml-4" data-doubao-line="892" data-doubao-column="41" data-doubao-key="447">
+                                            <h4 class="font-bold mb-1" data-doubao-line="893" data-doubao-column="45" data-doubao-key="448">地址</h4>
+                                            <p class="text-gray-600" data-doubao-line="894" data-doubao-column="45" data-doubao-key="449">XX大学校园管理处（绿化科）</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start" data-doubao-line="898" data-doubao-column="37" data-doubao-key="450">
+                                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1" data-doubao-line="899" data-doubao-column="41" data-doubao-key="451">
+                                            <i class="fa fa-phone text-primary" data-doubao-line="900" data-doubao-column="45" data-doubao-key="452"></i>
+                                        </div>
+                                        <div class="ml-4" data-doubao-line="902" data-doubao-column="41" data-doubao-key="453">
+                                            <h4 class="font-bold mb-1" data-doubao-line="903" data-doubao-column="45" data-doubao-key="454">电话</h4>
+                                            <p class="text-gray-600" data-doubao-line="904" data-doubao-column="45" data-doubao-key="455">012-34567890</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start" data-doubao-line="908" data-doubao-column="37" data-doubao-key="456">
+                                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1" data-doubao-line="909" data-doubao-column="41" data-doubao-key="457">
+                                            <i class="fa fa-envelope text-primary" data-doubao-line="910" data-doubao-column="45" data-doubao-key="458"></i>
+                                        </div>
+                                        <div class="ml-4" data-doubao-line="912" data-doubao-column="41" data-doubao-key="459">
+                                            <h4 class="font-bold mb-1" data-doubao-line="913" data-doubao-column="45" data-doubao-key="460">邮箱</h4>
+                                            <p class="text-gray-600" data-doubao-line="914" data-doubao-column="45" data-doubao-key="461">green@university.edu.cn</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start" data-doubao-line="918" data-doubao-column="37" data-doubao-key="462">
+                                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1" data-doubao-line="919" data-doubao-column="41" data-doubao-key="463">
+                                            <i class="fa fa-clock-o text-primary" data-doubao-line="920" data-doubao-column="45" data-doubao-key="464"></i>
+                                        </div>
+                                        <div class="ml-4" data-doubao-line="922" data-doubao-column="41" data-doubao-key="465">
+                                            <h4 class="font-bold mb-1" data-doubao-line="923" data-doubao-column="45" data-doubao-key="466">工作时间</h4>
+                                            <p class="text-gray-600" data-doubao-line="924" data-doubao-column="45" data-doubao-key="467">周一至周五: 8:00 - 17:30</p>
+                                            <p class="text-gray-600" data-doubao-line="925" data-doubao-column="45" data-doubao-key="468">周六: 9:00 - 12:00</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-8" data-doubao-line="930" data-doubao-column="33" data-doubao-key="469">
+                                    <h4 class="font-bold mb-3" data-doubao-line="931" data-doubao-column="37" data-doubao-key="470">关注我们</h4>
+                                    <div class="flex space-x-4" data-doubao-line="932" data-doubao-column="37" data-doubao-key="471">
+                                        <a href="#" class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors" data-doubao-line="933" data-doubao-column="41" data-doubao-key="472">
+                                            <i class="fa fa-weixin" data-doubao-line="934" data-doubao-column="45" data-doubao-key="473"></i>
+                                        </a>
+                                        <a href="#" class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors" data-doubao-line="936" data-doubao-column="41" data-doubao-key="474">
+                                            <i class="fa fa-weibo" data-doubao-line="937" data-doubao-column="45" data-doubao-key="475"></i>
+                                        </a>
+                                        <a href="#" class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors" data-doubao-line="939" data-doubao-column="41" data-doubao-key="476">
+                                            <i class="fa fa-instagram" data-doubao-line="940" data-doubao-column="45" data-doubao-key="477"></i>
+                                        </a>
+                                        <a href="#" class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors" data-doubao-line="942" data-doubao-column="41" data-doubao-key="478">
+                                            <i class="fa fa-youtube-play" data-doubao-line="943" data-doubao-column="45" data-doubao-key="479"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 联系表单 -->
+                        <div data-doubao-line="951" data-doubao-column="25" data-doubao-key="480">
+                            <form class="bg-light rounded-xl p-6" data-doubao-line="952" data-doubao-column="29" data-doubao-key="481">
+                                <h3 class="text-xl font-bold mb-6 text-dark" data-doubao-line="953" data-doubao-column="33" data-doubao-key="482">发送消息</h3>
+                                
+                                <div class="space-y-4" data-doubao-line="955" data-doubao-column="33" data-doubao-key="483">
+                                    <div data-doubao-line="956" data-doubao-column="37" data-doubao-key="484">
+                                        <label for="name" class="block text-gray-700 font-medium mb-2" data-doubao-line="957" data-doubao-column="41" data-doubao-key="485">姓名</label>
+                                        <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" placeholder="请输入您的姓名" data-doubao-line="958" data-doubao-column="41" data-doubao-key="486">
+                                    </div>
+                                    
+                                    <div data-doubao-line="961" data-doubao-column="37" data-doubao-key="487">
+                                        <label for="email" class="block text-gray-700 font-medium mb-2" data-doubao-line="962" data-doubao-column="41" data-doubao-key="488">邮箱</label>
+                                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" placeholder="请输入您的邮箱" data-doubao-line="963" data-doubao-column="41" data-doubao-key="489">
+                                    </div>
+                                    
+                                    <div data-doubao-line="966" data-doubao-column="37" data-doubao-key="490">
+                                        <label for="subject" class="block text-gray-700 font-medium mb-2" data-doubao-line="967" data-doubao-column="41" data-doubao-key="491">主题</label>
+                                        <select id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" data-doubao-line="968" data-doubao-column="41" data-doubao-key="492">
+                                            <option value="" data-doubao-line="969" data-doubao-column="45" data-doubao-key="493" selected="selected">请选择消息主题</option>
+                                            <option value="question" data-doubao-line="970" data-doubao-column="45" data-doubao-key="494">绿植相关问题</option>
+                                            <option value="activity" data-doubao-line="971" data-doubao-column="45" data-doubao-key="495">活动咨询</option>
+                                            <option value="suggestion" data-doubao-line="972" data-doubao-column="45" data-doubao-key="496">建议反馈</option>
+                                            <option value="other" data-doubao-line="973" data-doubao-column="45" data-doubao-key="497">其他</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div data-doubao-line="977" data-doubao-column="37" data-doubao-key="498">
+                                        <label for="message" class="block text-gray-700 font-medium mb-2" data-doubao-line="978" data-doubao-column="41" data-doubao-key="499">消息内容</label>
+                                        <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" placeholder="请输入您的消息内容" data-doubao-line="979" data-doubao-column="41" data-doubao-key="500"></textarea>
+                                    </div>
+                                    
+                                    <button type="submit" class="w-full bg-primary hover:bg-dark text-white py-3 rounded-lg font-medium transition-colors" data-doubao-line="982" data-doubao-column="37" data-doubao-key="501">
+                                        发送消息
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12" data-doubao-line="995" data-doubao-column="5" data-doubao-key="502">
+        <div class="container mx-auto px-4" data-doubao-line="996" data-doubao-column="9" data-doubao-key="503">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10" data-doubao-line="997" data-doubao-column="13" data-doubao-key="504">
+                <div data-doubao-line="998" data-doubao-column="17" data-doubao-key="505">
+                    <div class="flex items-center space-x-2 mb-6" data-doubao-line="999" data-doubao-column="21" data-doubao-key="506">
+                        <i class="fa fa-leaf text-accent text-2xl" data-doubao-line="1000" data-doubao-column="25" data-doubao-key="507"></i>
+                        <h3 class="text-xl font-bold" data-doubao-line="1001" data-doubao-column="25" data-doubao-key="508">校园绿植小管家</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-6" data-doubao-line="1003" data-doubao-column="21" data-doubao-key="509">致力于校园绿植保护与养护知识普及，共建绿色、美丽的校园环境。</p>
+                    <div class="flex space-x-4" data-doubao-line="1004" data-doubao-column="21" data-doubao-key="510">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors" data-doubao-line="1005" data-doubao-column="25" data-doubao-key="511">
+                            <i class="fa fa-weixin text-lg" data-doubao-line="1006" data-doubao-column="29" data-doubao-key="512"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors" data-doubao-line="1008" data-doubao-column="25" data-doubao-key="513">
+                            <i class="fa fa-weibo text-lg" data-doubao-line="1009" data-doubao-column="29" data-doubao-key="514"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors" data-doubao-line="1011" data-doubao-column="25" data-doubao-key="515">
+                            <i class="fa fa-instagram text-lg" data-doubao-line="1012" data-doubao-column="29" data-doubao-key="516"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors" data-doubao-line="1014" data-doubao-column="25" data-doubao-key="517">
+                            <i class="fa fa-youtube-play text-lg" data-doubao-line="1015" data-doubao-column="29" data-doubao-key="518"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div data-doubao-line="1020" data-doubao-column="17" data-doubao-key="519">
+                    <h4 class="text-lg font-bold mb-6" data-doubao-line="1021" data-doubao-column="21" data-doubao-key="520">快速链接</h4>
+                    <ul class="space-y-3" data-doubao-line="1022" data-doubao-column="21" data-doubao-key="521">
+                        <li data-doubao-line="1023" data-doubao-column="25" data-doubao-key="522"><a href="#home" class="text-gray-300 hover:text-white transition-colors" data-doubao-line="1023" data-doubao-column="29" data-doubao-key="523">首页</a></li>
+                        <li data-doubao-line="1024" data-doubao-column="25" data-doubao-key="524"><a href="#gallery" class="text-gray-300 hover:text-white transition-colors" data-doubao-line="1024" data-doubao-column="29" data-doubao-key="525">绿植图鉴</a></li>
+                        <li data-doubao-line="1025" data-doubao-column="25" data-doubao-key="526"><a href="#care" class="text-gray-300 hover:text-white transition-colors" data-doubao-line="1025" data-doubao-column="29" data-doubao-key="527">养护知识</a></li>
+                        <li data-doubao-line="1026" data-doubao-column="25" data-doubao-key="528"><a href="#phenology" class="text-gray-300 hover:text-white transition-colors" data-doubao-line="1026" data-doubao-column="29" data-doubao-key="529">物候观测</a></li>
+                        <li data-doubao-line="1027" data-doubao-column="25" data-doubao-key="530"><a href="#events" class="text-gray-300 hover:text-white transition-colors" data-doubao-line="1027" data-doubao-column="29" data-doubao-key="531">校园活动</a></li>
+                        <li data-doubao-line="1028" data-doubao-column="25" data-doubao-key="532"><a href="#contact" class="text-gray-300 hover:text-white transition-colors" data-doubao-line="1028" data-doubao-column="29" data-doubao-key="533">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div data-doubao-line="1032" data-doubao-column="17" data-doubao-key="534">
+                    <h4 class="text-lg font-bold mb-6" data-doubao-line="1033" data-doubao-column="21" data-doubao-key="535">相关资源</h4>
+                    <ul class="space-y-3" data-doubao-line="1034" data-doubao-column="21" data-doubao-key="536">
+                        <li data-doubao-line="1035" data-doubao-column="25" data-doubao-key="537"><a href="#" class="text-gray-300 hover:text-white transition-colors" data-doubao-line="1035" data-doubao-column="29" data-doubao-key="538">绿植养护手册</a></li>
+                        <li data-doubao-line="1036" data-doubao-column="25" data-doubao-key="539"><a href="#" class="text-gray-300 hover:text-white transition-colors" data-doubao-line="1036" data-doubao-column="29" data-doubao-key="540">校园植物分布图</a></li>
+                        <li data-doubao-line="1037" data-doubao-column="25" data-doubao-key="541"><a href="#" class="text-gray-300 hover:text-white transition-colors" data-doubao-line="1037" data-doubao-column="29" data-doubao-key="542">志愿者招募</a></li>
+                        <li data-doubao-line="1038" data-doubao-column="25" data-doubao-key="543"><a href="#" class="text-gray-300 hover:text-white transition-colors" data-doubao-line="1038" data-doubao-column="29" data-doubao-key="544">常见问题解答</a></li>
+                        <li data-doubao-line="1039" data-doubao-column="25" data-doubao-key="545"><a href="#" class="text-gray-300 hover:text-white transition-colors" data-doubao-line="1039" data-doubao-column="29" data-doubao-key="546">下载中心</a></li>
+                    </ul>
+                </div>
+                
+                <div data-doubao-line="1043" data-doubao-column="17" data-doubao-key="547">
+                    <h4 class="text-lg font-bold mb-6" data-doubao-line="1044" data-doubao-column="21" data-doubao-key="548">联系方式</h4>
+                    <ul class="space-y-3" data-doubao-line="1045" data-doubao-column="21" data-doubao-key="549">
+                        <li class="flex items-start" data-doubao-line="1046" data-doubao-column="25" data-doubao-key="550">
+                            <i class="fa fa-map-marker text-accent mt-1 mr-3" data-doubao-line="1047" data-doubao-column="29" data-doubao-key="551"></i>
+                            <span class="text-gray-300" data-doubao-line="1048" data-doubao-column="29" data-doubao-key="552">XX大学校园管理处（绿化科）</span>
+                        </li>
+                        <li class="flex items-center" data-doubao-line="1050" data-doubao-column="25" data-doubao-key="553">
+                            <i class="fa fa-phone text-accent mr-3" data-doubao-line="1051" data-doubao-column="29" data-doubao-key="554"></i>
+                            <span class="text-gray-300" data-doubao-line="1052" data-doubao-column="29" data-doubao-key="555">012-34567890</span>
+                        </li>
+                        <li class="flex items-center" data-doubao-line="1054" data-doubao-column="25" data-doubao-key="556">
+                            <i class="fa fa-envelope text-accent mr-3" data-doubao-line="1055" data-doubao-column="29" data-doubao-key="557"></i>
+                            <span class="text-gray-300" data-doubao-line="1056" data-doubao-column="29" data-doubao-key="558">green@university.edu.cn</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400 text-sm" data-doubao-line="1062" data-doubao-column="13" data-doubao-key="559">
+                <p data-doubao-line="1063" data-doubao-column="17" data-doubao-key="560">© 2023 校园绿植小管家 版权所有 | 主办单位：XX大学校园管理处</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 植物详情模态框 -->
+    <div id="plant-modal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center backdrop-blur-sm" data-doubao-line="1069" data-doubao-column="5" data-doubao-key="561">
+        <div class="bg-white rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto m-4" data-doubao-line="1070" data-doubao-column="9" data-doubao-key="562">
+            <div class="relative" data-doubao-line="1071" data-doubao-column="13" data-doubao-key="563">
+                <img id="modal-image" src="Sandbox%20Document_files/106-1200x600.jpg" alt="植物图片" class="w-full h-64 object-cover" data-doubao-line="1072" data-doubao-column="17" data-key="fb58fa53" data-review-status="0" data-src="https://picsum.photos/id/106/1200/600" data-doubao-key="564">
+                <button id="close-modal" class="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition-colors" data-doubao-line="1073" data-doubao-column="17" data-doubao-key="565">
+                    <i class="fa fa-times" data-doubao-line="1074" data-doubao-column="21" data-doubao-key="566"></i>
+                </button>
+            </div>
+            
+            <div class="p-6" data-doubao-line="1078" data-doubao-column="13" data-doubao-key="567">
+                <h3 id="modal-title" class="text-2xl font-bold mb-2" data-doubao-line="1079" data-doubao-column="17" data-doubao-key="568">樱花树</h3>
+                <p id="modal-scientific" class="text-gray-600 mb-6" data-doubao-line="1080" data-doubao-column="17" data-doubao-key="569">蔷薇科樱属</p>
+                
+                <div class="space-y-6" data-doubao-line="1082" data-doubao-column="17" data-doubao-key="570">
+                    <div data-doubao-line="1083" data-doubao-column="21" data-doubao-key="571">
+                        <h4 class="font-bold text-dark mb-2" data-doubao-line="1084" data-doubao-column="25" data-doubao-key="572">植物简介</h4>
+                        <p class="text-gray-700" id="modal-description" data-doubao-line="1085" data-doubao-column="25" data-doubao-key="573">樱花树是落叶乔木，树皮灰色，小枝无毛。叶片椭圆卵形或倒卵形，边缘有尖锐重锯齿。花每支三五朵，成伞状花序，花瓣先端有缺刻，花色多为白色、粉红色。花期3-4月，果期5月。</p>
+                    </div>
+                    
+                    <div data-doubao-line="1088" data-doubao-column="21" data-doubao-key="574">
+                        <h4 class="font-bold text-dark mb-2" data-doubao-line="1089" data-doubao-column="25" data-doubao-key="575">生长习性</h4>
+                        <p class="text-gray-700" id="modal-habitat" data-doubao-line="1090" data-doubao-column="25" data-doubao-key="576">樱花树性喜温暖、湿润偏干的环境。要求充足的阳光，不耐阴湿，不耐盐碱，忌积水，耐寒，耐旱，花期怕大风和烟尘。适宜在疏松、肥沃、排水良好的微酸性或中性的沙质壤土中生长。</p>
+                    </div>
+                    
+                    <div data-doubao-line="1093" data-doubao-column="21" data-doubao-key="577">
+                        <h4 class="font-bold text-dark mb-2" data-doubao-line="1094" data-doubao-column="25" data-doubao-key="578">养护要点</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-2" id="modal-care" data-doubao-line="1095" data-doubao-column="25" data-doubao-key="579">
+                            <li data-doubao-line="1096" data-doubao-column="29" data-doubao-key="580">浇水：保持土壤湿润，但避免积水</li>
+                            <li data-doubao-line="1097" data-doubao-column="29" data-doubao-key="581">施肥：每年秋季施一次有机肥</li>
+                            <li data-doubao-line="1098" data-doubao-column="29" data-doubao-key="582">修剪：花后进行修剪，剪去枯枝、病弱枝</li>
+                            <li data-doubao-line="1099" data-doubao-column="29" data-doubao-key="583">光照：需要充足阳光，每天至少6小时</li>
+                        </ul>
+                    </div>
+                    
+                    <div data-doubao-line="1103" data-doubao-column="21" data-doubao-key="584">
+                        <h4 class="font-bold text-dark mb-2" data-doubao-line="1104" data-doubao-column="25" data-doubao-key="585">在校园中的分布</h4>
+                        <p class="text-gray-700" id="modal-location" data-doubao-line="1105" data-doubao-column="25" data-doubao-key="586">主要分布在校园樱花大道、图书馆前广场及宿舍区绿化带。</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 flex justify-end" data-doubao-line="1109" data-doubao-column="17" data-doubao-key="587">
+                    <button class="bg-primary hover:bg-dark text-white px-6 py-2 rounded-lg font-medium transition-colors" data-doubao-line="1110" data-doubao-column="21" data-doubao-key="588">
+                        查看完整养护指南
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary hover:bg-dark text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible" data-doubao-line="1119" data-doubao-column="5" data-doubao-key="589">
+        <i class="fa fa-chevron-up" data-doubao-line="1120" data-doubao-column="9" data-doubao-key="590"></i>
+    </button>
+    
+    <!-- JavaScript -->
+    <script data-doubao-line="1124" data-doubao-column="5" data-doubao-key="591">
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 轮播图功能
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const prevBtn = document.getElementById('prev-slide');
+            const nextBtn = document.getElementById('next-slide');
+            let currentSlide = 0;
+            
+            // 显示指定幻灯片
+            function showSlide(index) {
+                // 隐藏所有幻灯片
+                carouselItems.forEach(item => item.classList.remove('active'));
+                // 重置所有指示器
+                indicators.forEach(indicator => indicator.classList.remove('bg-white'));
+                indicators.forEach(indicator => indicator.classList.add('bg-white/50'));
+                
+                // 显示当前幻灯片
+                carouselItems[index].classList.add('active');
+                // 激活当前指示器
+                indicators[index].classList.remove('bg-white/50');
+                indicators[index].classList.add('bg-white');
+                
+                currentSlide = index;
+            }
+            
+            // 下一张幻灯片
+            function nextSlide() {
+                let newIndex = currentSlide + 1;
+                if (newIndex >= carouselItems.length) {
+                    newIndex = 0;
+                }
+                showSlide(newIndex);
+            }
+            
+            // 上一张幻灯片
+            function prevSlide() {
+                let newIndex = currentSlide - 1;
+                if (newIndex < 0) {
+                    newIndex = carouselItems.length - 1;
+                }
+                showSlide(newIndex);
+            }
+            
+            // 自动轮播
+            let slideInterval = setInterval(nextSlide, 5000);
+            
+            // 轮播控制事件
+            prevBtn.addEventListener('click', function() {
+                clearInterval(slideInterval);
+                prevSlide();
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                clearInterval(slideInterval);
+                nextSlide();
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+            
+            // 指示器点击事件
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    clearInterval(slideInterval);
+                    showSlide(index);
+                    slideInterval = setInterval(nextSlide, 5000);
+                });
+            });
+            
+            // 移动端菜单切换
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                // 切换图标
+                const icon = menuToggle.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            
+            // 导航栏滚动效果
+            const navbar = document.getElementById('navbar');
+            let lastScrollTop = 0;
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // 导航栏效果
+                if (scrollTop > 100) {
+                    navbar.classList.add('py-2', 'shadow-lg');
+                    navbar.classList.remove('py-3', 'shadow-md');
+                } else {
+                    navbar.classList.add('py-3', 'shadow-md');
+                    navbar.classList.remove('py-2', 'shadow-lg');
+                }
+                
+                // 返回顶部按钮显示/隐藏
+                const backToTop = document.getElementById('back-to-top');
+                if (scrollTop > 500) {
+                    backToTop.classList.remove('opacity-0', 'invisible');
+                    backToTop.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTop.classList.add('opacity-0', 'invisible');
+                    backToTop.classList.remove('opacity-100', 'visible');
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+            
+            // 返回顶部功能
+            document.getElementById('back-to-top').addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // 植物详情模态框
+            const plantModal = document.getElementById('plant-modal');
+            const closeModal = document.getElementById('close-modal');
+            const plantDetailBtns = document.querySelectorAll('.plant-detail-btn');
+            
+            // 打开模态框
+            plantDetailBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const plantId = this.getAttribute('data-id');
+                    // 根据植物ID加载不同内容，这里简化处理
+                    loadPlantDetails(plantId);
+                    
+                    plantModal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden'; // 防止背景滚动
+                });
+            });
+            
+            // 关闭模态框
+            closeModal.addEventListener('click', function() {
+                plantModal.style.display = 'none';
+                document.body.style.overflow = ''; // 恢复背景滚动
+            });
+            
+            // 点击模态框外部关闭
+            plantModal.addEventListener('click', function(e) {
+                if (e.target === plantModal) {
+                    plantModal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // 加载植物详情（简化版）
+            function loadPlantDetails(id) {
+                // 实际应用中可以根据ID从服务器加载数据
+                const plants = {
+                    1: {
+                        title: "樱花树",
+                        scientific: "蔷薇科樱属",
+                        image: "https://picsum.photos/id/106/1200/600",
+                        description: "樱花树是落叶乔木，树皮灰色，小枝无毛。叶片椭圆卵形或倒卵形，边缘有尖锐重锯齿。花每支三五朵，成伞状花序，花瓣先端有缺刻，花色多为白色、粉红色。花期3-4月，果期5月。",
+                        habitat: "樱花树性喜温暖、湿润偏干的环境。要求充足的阳光，不耐阴湿，不耐盐碱，忌积水，耐寒，耐旱，花期怕大风和烟尘。适宜在疏松、肥沃、排水良好的微酸性或中性的沙质壤土中生长。",
+                        care: ["浇水：保持土壤湿润，但避免积水", "施肥：每年秋季施一次有机肥", "修剪：花后进行修剪，剪去枯枝、病弱枝", "光照：需要充足阳光，每天至少6小时"],
+                        location: "主要分布在校园樱花大道、图书馆前广场及宿舍区绿化带。"
+                    },
+                    2: {
+                        title: "银杏树",
+                        scientific: "银杏科银杏属",
+                        image: "https://picsum.photos/id/119/1200/600",
+                        description: "银杏树为落叶大乔木，高达40米，胸径可达4米。树皮灰褐色，深纵裂。叶扇形，有长柄，淡绿色，无毛，有多数叉状并列细脉，顶端宽5-8厘米，在短枝上常具波状缺刻，在长枝上常2裂，基部宽楔形。",
+                        habitat: "银杏树喜温暖湿润气候，向阳、肥沃的沙质壤土，比较耐寒和耐旱，但不耐水涝，萌蘖力强，对大气污染有一定的抗性。生长较慢，寿命极长，可达数千年。",
+                        care: ["浇水：耐旱，生长期保持土壤湿润即可，忌积水", "施肥：春季和秋季各施一次肥，以有机肥为主", "修剪：冬季休眠期修剪，保持树形美观", "光照：喜充足阳光，适合种植在开阔地带"],
+                        location: "主要分布在校园主干道两侧、教学楼前及行政楼广场。"
+                    },
+                    3: {
+                        title: "月季花",
+                        scientific: "蔷薇科蔷薇属",
+                        image: "https://picsum.photos/id/152/1200/600",
+                        description: "月季花被称为花中皇后，又称“月月红”，是常绿、半常绿低矮灌木，四季开花﹐一般为红色﹐或粉色、偶有白色和黄色﹐可作为观赏植物，也可作为药用植物。",
+                        habitat: "月季花适应性强，耐寒耐旱，对土壤要求不严格，但以富含有机质、排水良好的微带酸性沙壤土为好。喜欢阳光，但是过多的强光直射又对花蕾发育不利，花瓣容易焦祜。",
+                        care: ["浇水：见干见湿，避免积水", "施肥：生长期每隔10天施一次肥，花期增施磷钾肥", "修剪：花后及时剪去残花，促进新枝生长", "光照：每天至少5小时光照，夏季适当遮阴"],
+                        location: "主要分布在校园花坛、绿化带边缘及宿舍区小花园。"
+                    },
+                    4: {
+                        title: "紫薇树",
+                        scientific: "千屈菜科紫薇属",
+                        image: "https://picsum.photos/id/145/1200/600",
+                        description: "紫薇树是我校建校时种植的古树，落叶灌木或小乔木，高可达7米；树皮平滑，灰色或灰褐色；枝干多扭曲，小枝纤细，叶互生或有时对生，纸质，椭圆形、阔矩圆形或倒卵形。",
+                        habitat: "紫薇树喜暖湿气候，喜光，略耐阴，喜肥，尤喜深厚肥沃的砂质壤土，好生于略有湿气之地，亦耐干旱，忌涝，忌种在地下水位高的低湿地方，性喜温暖，而能抗寒，萌蘖性强。",
+                        care: ["浇水：耐旱，生长期保持土壤湿润即可，忌积水", "施肥：春季施一次有机肥，秋季施一次磷钾肥", "修剪：冬季休眠期修剪，花后剪去残花", "光照：喜充足阳光，适合种植在开阔地带"],
+                        location: "主要分布在老校区中心广场，是我校的标志性植物之一。"
+                    }
+                };
+                
+                const plant = plants[id] || plants[1];
+                
+                document.getElementById('modal-title').textContent = plant.title;
+                document.getElementById('modal-scientific').textContent = plant.scientific;
+                document.getElementById('modal-image').src = plant.image;
+                document.getElementById('modal-image').alt = plant.title;
+                document.getElementById('modal-description').textContent = plant.description;
+                document.getElementById('modal-habitat').textContent = plant.habitat;
+                
+                // 更新养护要点列表
+                const careList = document.getElementById('modal-care');
+                careList.innerHTML = '';
+                plant.care.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    careList.appendChild(li);
+                });
+                
+                document.getElementById('modal-location').textContent = plant.location;
+            }
+            
+            // 物候图表
+            const ctx = document.getElementById('phenologyChart').getContext('2d');
+            const phenologyChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['樱花', '银杏', '紫薇', '梧桐', '松树'],
+                    datasets: [
+                        {
+                            label: '2021年',
+                            data: [78, 100, 172, 278, 330],
+                            borderColor: '#4CAF50',
+                            backgroundColor: 'rgba(76, 175, 80, 0.1)',
+                            tension: 0.3,
+                            fill: false
+                        },
+                        {
+                            label: '2022年',
+                            data: [80, 102, 170, 280, 332],
+                            borderColor: '#8D6E63',
+                            backgroundColor: 'rgba(141, 110, 99, 0.1)',
+                            tension: 0.3,
+                            fill: false
+                        },
+                        {
+                            label: '2023年',
+                            data: [76, 101, 173, 275, 331],
+                            borderColor: '#CDDC39',
+                            backgroundColor: 'rgba(205, 220, 57, 0.1)',
+                            tension: 0.3,
+                            fill: false
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '物候日期（天）'
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const day = context.raw;
+                                    const month = Math.floor(day / 30) + 1;
+                                    const date = day % 30 + 1;
+                                    return `${context.dataset.label}: ${month}月${date}日`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 分类标签切换
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // 移除所有按钮的活跃状态
+                    categoryBtns.forEach(b => {
+                        b.classList.remove('bg-primary', 'text-white');
+                        b.classList.add('bg-gray-100', 'hover:bg-gray-200');
+                    });
+                    
+                    // 设置当前按钮为活跃状态
+                    this.classList.remove('bg-gray-100', 'hover:bg-gray-200');
+                    this.classList.add('bg-primary', 'text-white');
+                    
+                    // 这里可以添加筛选植物的逻辑
+                });
+            });
+        });
+    </script>
+
+
+
+  
+
+<div id="global-shadow-host"></div><style>:root {
+      --image-e3b2891c: url(https://picsum.photos/id/106/1920/1080);
+  --image-2409f0fe: url(https://picsum.photos/id/152/1920/1080);
+  --image-f526c46a: url(https://picsum.photos/id/145/1920/1080);
+  --image-2ac4a1d3: url(https://picsum.photos/id/119/600/400);
+  --image-b376e491: url(https://picsum.photos/id/106/600/400);
+  --image-cd6e36d8: url(https://picsum.photos/id/184/600/400);
+  --image-f8c92e50: url(https://picsum.photos/id/106/600/800);
+  --image-6ea2c2b2: url(https://picsum.photos/id/119/600/800);
+  --image-3d484b6c: url(https://picsum.photos/id/152/600/800);
+  --image-1542b3c6: url(https://picsum.photos/id/145/600/800);
+    }</style><style>:root {
+      --image-76f4b9cd: url(https://picsum.photos/id/184/800/600);
+  --image-80b5a25a: url(https://picsum.photos/id/116/800/600);
+  --image-fb58fa53: url(https://picsum.photos/id/106/1200/600);
+    }</style></body></html>
